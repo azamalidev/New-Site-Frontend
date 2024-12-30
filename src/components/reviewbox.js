@@ -7,7 +7,7 @@ import fourImage from "../assets/image/four.png";
 const Reviewbox = () => {
   return (
     <div>
-      <div className="mt-[950px]  ml-[2px] ">
+      <div className="mt-20 mb-5   ">
         <h1 className="font-bold text-1xl">What customers say about us</h1>
         <h2 className="mt-4 text-lg">
           We do our best to provide you the best experience ever

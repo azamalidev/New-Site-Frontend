@@ -13,6 +13,7 @@ export const routes = {
   profile:"/profile",
   quotation: "/quotation",
   verify: "/verify",
-  lead: '/lead',
+  lead: "/lead",
+  requestList:"/request-list",
 };
 

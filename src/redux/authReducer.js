@@ -11,16 +11,19 @@ const GET_STATES_FAILURE = 'GET_STATES_FAILURE'; // New action type
 const GET_ACTIVITY_POINTS_SUCCESS = 'GET_POINST_SUCCESS';
 const GET_POINTS_HISTORY_SUCCESS = 'GET_POINST_HISTORY_SUCCESS';
 
+const GET_LEAD_SUCCESS = 'GET_MY_LEAD_SUCCESS';
+
 // Initial state
 const initialState = {
+  leads: [],
   pointsHistory: [],
   activityPoints: {},
-  states: {}, 
+  states: {},
   employee: [],
-  profile: null, 
-  loading: false, 
-  error: '', 
-  linkSent: false, 
+  profile: null,
+  loading: false,
+  error: '',
+  linkSent: false,
 };
 
 // Reducer
@@ -50,7 +53,8 @@ const authReducer = (state = initialState, action) => {
       return { ...state, loading: false, activityPoints: action.payload };
     case GET_POINTS_HISTORY_SUCCESS:
       return { ...state, loading: false, pointsHistory: action.payload };
-
+    case GET_LEAD_SUCCESS:
+      return { ...state, loading: false, leads: action.payload };
     default:
       return state;
   }

@@ -6,61 +6,53 @@ import arrowImage from "../assets/image/arrow.png";
 
 const Features = () => {
   return (
-    <div className="relative  py-4 px-2">
-      {/* Feature Images Row: Positioned at the Top */}
-      <div
-        className="absolute top-20 left-23 right-0 z-10 flex flex-wrap gap-4 justify-center"
-        style={{
-          paddingTop: "30px", 
-          marginRight:"5rem"
-        }}
-      >
-        {/* Feature Image 1 */}
-        <img
-          src={feature2Image}
-          alt="Feature 2"
-          className="w-[210.39px] h-[120.6px]  opacity-100"
-        />
-        {/* Feature Image 2 */}
-        <img
-          src={feature1Image}
-          alt="Feature 2"
-          className="w-[200.39px] h-[300.24px] opacity-100" // Set opacity to 100
-        />
-        {/* Feature Image 3 */}
-        <img
-          src={featureImage}
-          alt="Feature 1"
-          className="w-[200.39px] h-[300.24px] opacity-100"
-        />
-      </div>
+    <div className="relative py-4 px-2">
+      {/* Main Flex Container for Layout */}
+      <div className="flex flex-wrap justify-center lg:flex-nowrap">
+        {/* Features Text Section (20% width on large screens) */}
+        <div className="flex justify-center items-center lg:w-[20%] w-full">
+          <div className="z-10 text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">
+            Features
+          </div>
+        </div>
 
-      {/* Arrow Image: Positioned at the Top */}
-      <div
-        className="absolute top-[180px] left-[25%] transform -translate-x-1/2 z-10"
-        style={{
-          opacity: 1, // Ensure the arrow is visible
-          transform: "rotate(0.27deg)", // Rotate arrow image
-        }}
-      >
-        <img
-          src={arrowImage}
-          alt="Arrow"
-          className="w-[125.31px] h-[90.11px]"
-          style={{
-            opacity: 1, // Ensure the arrow image is visible
-          }}
-        />
-      </div>
+        {/* Arrow Image Section (20% width on large screens) */}
+        <div className="flex justify-center items-center lg:w-[20%] w-full">
+          <div
+            className="z-10"
+            style={{
+              transform: "rotate(0.27deg)",
+            }}
+          >
+            <img
+              src={arrowImage}
+              alt="Arrow"
+              className="w-[100px] h-[70px] sm:w-[120px] sm:h-[80px] md:w-[125px] md:h-[90px]"
+            />
+          </div>
+        </div>
 
-      {/* Features Text: Positioned Below Arrow */}
-      <div
-        className="absolute top-[200px] left-[20%] transform -translate-x-1/2 z-10 text-4xl font-bold text-gray-800"
-        style={{
-          marginTop: "70px", // Adds spacing between the arrow and the text
-        }}
-      >
-        Features
+        {/* Feature Images Section (60% width on large screens) */}
+        <div className="flex justify-center items-center lg:w-[60%] w-full flex-wrap gap-4">
+          {/* Feature Image 1 */}
+          <img
+            src={feature2Image}
+            alt="Feature 2"
+            className="w-[150px] h-[90px] sm:w-[200px] sm:h-[120px] md:w-[210px] md:h-[130px] opacity-100"
+          />
+          {/* Feature Image 2 */}
+          <img
+            src={feature1Image}
+            alt="Feature 1"
+            className="w-[150px] h-[220px] sm:w-[200px] sm:h-[260px] md:w-[210px] md:h-[300px] opacity-100"
+          />
+          {/* Feature Image 3 */}
+          <img
+            src={featureImage}
+            alt="Feature 1"
+            className="w-[150px] h-[220px] sm:w-[200px] sm:h-[260px] md:w-[210px] md:h-[300px] opacity-100"
+          />
+        </div>
       </div>
     </div>
   );

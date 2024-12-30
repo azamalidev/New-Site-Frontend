@@ -38,7 +38,7 @@ const ChooseUs = () => {
   ];
 
   return (
-    <section className="pt-40 pb-24 flex justify-center items-center mt-80 mb-28">
+    <section className=" pb-24 flex justify-center items-center mt-20 ">
       <motion.div
         className="text-center max-w-5xl"
         variants={container}

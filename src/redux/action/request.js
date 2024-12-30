@@ -12,6 +12,9 @@ const GET_ACTIVITY_POINTS_SUCCESS = 'GET_POINST_SUCCESS';
 
 const GET_POINTS_HISTORY_SUCCESS = 'GET_POINST_HISTORY_SUCCESS';
 
+const GET_LEAD_SUCCESS = 'GET_MY_LEAD_SUCCESS';
+
+
 const API_BASE_URL = 'http://localhost:3000';
 
 export const addRequest = (data) => async (dispatch) => {
@@ -126,6 +129,44 @@ export const getMyActivityHistory = (userId, obj) => async (dispatch) => {
     return error;
   }
 };
+
+
+export const getMyLead = (userId) => async (dispatch) => {
+  try {
+    const token = localStorage.getItem('token'); 
+    const params = new URLSearchParams({
+      userId,
+    }).toString();
+
+    let config = {
+      method: 'get',
+      url: `http://localhost:3000/request/get-mine?${params}`,
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+    };
+
+    // Execute Axios request
+    const response = await axios.request(config);
+    // Dispatch action if data is present
+    if (response.data) {
+      dispatch({
+        type: GET_LEAD_SUCCESS,
+        payload: response.data?.data,
+      });
+    }
+
+    return response.data;
+  } catch (error) {
+    // Handle errors
+    console.error(error);
+    toast.error(error.response?.data?.message || error.message);
+    return error;
+  }
+};
+
+
 
 
 

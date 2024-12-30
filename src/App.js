@@ -20,6 +20,8 @@ import Quotation from './pages/Quotation';
 import Lead from './pages/Lead';
 import { routes } from './contant';
 import SupportPage from './pages/Support'
+import RequestList from './components/RequestList';
+
 
 // Public Route Component
 const PublicRoute = ({ isAuthenticated, children }) => {
@@ -104,6 +106,15 @@ function App() {
     </PrivateRoute>
   }
 />
+<Route
+  path="/request-list"
+  element={
+    <PrivateRoute>
+      <RequestList />
+    </PrivateRoute>
+  }
+/>
+
 
         <Route
           path={routes.quotation}

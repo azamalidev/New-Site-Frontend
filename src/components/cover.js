@@ -6,20 +6,15 @@ const Cover = () => {
   const navigate = useNavigate(); // Initialize the useNavigate hook
 
   return (
-    <div className="flex items-start justify-start w-full p-0 m-0 absolute top-[1400px] left-0 h-screen">
+    <div className="relative w-full h-screen">
       {/* Background Image */}
-      <img src={coverImage} alt="Cover" className="w-full h-auto" />
+      <img src={coverImage} alt="Cover" className="w-full h-full object-cover" />
 
       {/* Heading */}
       <h1
+        className="absolute top-24 left-1/4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-bold"
         style={{
-          position: "absolute",
-          top: "5rem", // Keep this value as requested
-          left: "20rem", // Keep this value as requested
           fontFamily: "Inter",
-          fontSize: "4rem",
-          fontWeight: "bold", // Makes the text bold
-          color: "#FFFFFF", // Optional: Adjust the color as needed
         }}
       >
         About LeadGenPro
@@ -27,18 +22,9 @@ const Cover = () => {
 
       {/* Text Overlay */}
       <div
+        className="absolute top-48 left-1/4 text-xs sm:text-sm md:text-base lg:text-lg text-white font-medium leading-relaxed"
         style={{
-          position: "absolute",
-          top: "12rem", // Keep this value as requested
-          left: "20rem",
           fontFamily: "Inter",
-          fontSize: "1rem",
-          fontWeight: 500,
-          lineHeight: "29.73px",
-          textAlign: "left",
-          textUnderlinePosition: "from-font",
-          textDecorationSkipInk: "none",
-          color: "#FFFFFF",
         }}
       >
         <span>
@@ -53,23 +39,10 @@ const Cover = () => {
 
       {/* About Us Button */}
       <button
-        onClick={() => navigate("/about-us")} // Navigate to /about-us route
-        style={{
-          position: "absolute",
-          top: "350px",
-          left: "540px",
-          padding: "10px 20px",
-          fontSize: "18px",
-          fontWeight: "bold",
-          fontFamily: "Inter",
-          backgroundColor: "#FFFFFF", // Your preferred color
-          color: "#0000FF",
-          border: "none",
-          borderRadius: "5px",
-          cursor: "pointer",
-        }}
+        onClick={() => navigate("/about-us")}
+        className="absolute top-[320px] sm:top-[280px] md:top-[300px] lg:top-[350px] left-1/4 sm:left-1/4 md:left-1/3 lg:left-[40%] px-6 py-2 text-base sm:text-sm font-bold bg-white text-blue-600 rounded-md cursor-pointer"
       >
-      Learn More  About Us
+        Learn More About Us
       </button>
     </div>
   );
