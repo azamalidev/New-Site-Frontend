@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Eye, EyeOff } from 'lucide-react'; // Import icons from lucide-react
 import { useNavigate } from 'react-router-dom';
 import { routes } from '../contant';
-import Logo from '../assets/image/Logo.png';
 import { login } from '../redux/action/auth';
 import { useDispatch } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
@@ -53,27 +52,20 @@ const SignIn = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-r from-green-500 to-teal-500 flex items-center justify-center p-4">
       <ToastContainer />
-      <div className="bg-white rounded-lg shadow-sm p-6 w-full max-w-md">
-        <div className="flex justify-center mb-6">
-          <img
-            src={Logo}
-            alt="Logo"
-            style={{ width: '10rem', height: '3rem' }}
-          />
-        </div>
-        <h1 className="text-center text-2xl font-semibold mb-6 text-gray-800">
-          Welcome Back
+      <div className="bg-white rounded-lg shadow-lg p-8 w-full max-w-md">
+        <h1 className="text-center text-3xl font-semibold mb-8 text-gray-800">
+          Login Page
         </h1>
-        <form onSubmit={handleSignIn} className="space-y-4">
+        <form onSubmit={handleSignIn} className="space-y-6">
           {/* Email Input */}
           <div className="space-y-2">
             <label
               htmlFor="email"
               className="block text-sm font-medium text-gray-700"
             >
-              Email
+              Email Address
             </label>
             <input
               type="email"
@@ -82,18 +74,18 @@ const SignIn = () => {
               value={formData.email}
               onChange={handleChange}
               placeholder="Enter your email"
-              className="w-full px-3 py-2 rounded bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500"
             />
           </div>
 
           {/* Phone Input */}
-          <small className="block text-center">OR</small>
+          <small className="block text-center text-gray-700">OR</small>
           <div className="space-y-2">
             <label
               htmlFor="phone"
               className="block text-sm font-medium text-gray-700"
             >
-              Phone
+              Phone Number
             </label>
             <input
               type="text"
@@ -102,7 +94,7 @@ const SignIn = () => {
               value={formData.phone}
               onChange={handleChange}
               placeholder="Enter your phone"
-              className="w-full px-3 py-2 rounded bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500"
             />
           </div>
 
@@ -121,12 +113,12 @@ const SignIn = () => {
               value={formData.password}
               onChange={handleChange}
               placeholder="Enter your password"
-              className="w-full px-3 py-2 rounded bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500"
             />
             <button
               type="button"
               onClick={togglePasswordVisibility}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500"
+              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"
             >
               {passwordVisible ? <EyeOff size={20} /> : <Eye size={20} />}
             </button>
@@ -155,7 +147,7 @@ const SignIn = () => {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full py-2 px-4 bg-green-800 hover:bg-green-900 text-white font-medium rounded transition-colors"
+            className="w-full py-3 bg-green-800 hover:bg-green-900 text-white font-medium rounded-lg transition-all"
           >
             Sign In
           </button>
