@@ -1,96 +1,189 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaYoutube, FaDribbble } from 'react-icons/fa';
+import { IoLocationOutline } from 'react-icons/io5';
+import { MdOutlineEmail } from 'react-icons/md';
+import { FiPhone } from 'react-icons/fi';
 import Header from '../components/Header';
-import Footur from '../components/footur';
+import Footer from '../components/footur';
 
-const SupportPage = () => {
+function ContactPage() {
+
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Form submitted:', formData);
+    // Add your form submission logic here
+  };
+
   return (
-    <>
-      <Header />
-
-      <div className="min-h-screen bg-gray-100 flex flex-col justify-center items-center px-4">
-        <motion.div
-          className="max-w-3xl w-full bg-white shadow-lg rounded-lg p-6"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
-        >
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-            Contact Support
-          </h1>
-          <p className="text-gray-600 mb-6">
-            If you need assistance, please contact us using the information
-            below. Our team is here to help you.
-          </p>
-
-          <motion.div
-            className="flex flex-col gap-4"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2, duration: 0.5, ease: 'easeOut' }}
-          >
-            <div className="flex items-center gap-2">
-              <span className="text-blue-500 text-lg font-semibold">📞 Phone:</span>
-              <span className="text-gray-800 font-medium">+1 234 567 890</span>
+    <div>
+      <Header/>
+      {/* Hero Section */}
+      <div className="hero-section" style={{
+        background: 'linear-gradient(rgba(11, 70, 25, 0.95), rgba(11, 70, 25, 0.95)), url("https://images.unsplash.com/photo-1557683311-eac922347aa1?q=80&w=2029&auto=format&fit=crop")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        padding: '50px 0'
+      }}>
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-md-6">
+              <img 
+                src="https://i.ibb.co/M6YL2vK/logo.png" 
+                alt="PFTP Logo" 
+                style={{ maxHeight: '80px' }}
+              />
             </div>
-
-            <div className="flex items-center gap-2">
-              <span className="text-green-500 text-lg font-semibold">📧 Email:</span>
-              <span className="text-gray-800 font-medium">
-                support@example.com
-              </span>
+            <div className="col-md-6 text-end">
+              <h1 className="text-white mb-0">CONTACT US</h1>
+              <nav aria-label="breadcrumb">
+                <ol className="breadcrumb justify-content-end mb-0">
+                  <li className="breadcrumb-item">
+                    <a href="/" className="text-warning text-decoration-none">Home</a>
+                  </li>
+                  <li className="breadcrumb-item active text-white" aria-current="page">Contact Us</li>
+                </ol>
+              </nav>
             </div>
-
-            <div className="flex items-center gap-2">
-              <span className="text-purple-500 text-lg font-semibold">🕒 Hours:</span>
-              <span className="text-gray-800 font-medium">
-                Mon - Fri: 9:00 AM - 6:00 PM
-              </span>
-            </div>
-          </motion.div>
-
-          <motion.div
-            className="mt-8"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.4, duration: 0.5, ease: 'easeOut' }}
-          >
-            <button className="bg-blue-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-600 focus:outline-none transition flex items-center justify-center gap-4">
-              <span>Get in Touch</span>
-              <div className="flex items-center gap-2">
-                <a
-                  href="https://facebook.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white hover:text-gray-200 transition"
-                >
-                  <i className="fab fa-facebook-f"></i>
-                </a>
-                <a
-                  href="https://twitter.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white hover:text-gray-200 transition"
-                >
-                  <i className="fab fa-twitter"></i>
-                </a>
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white hover:text-gray-200 transition"
-                >
-                  <i className="fab fa-linkedin-in"></i>
-                </a>
-              </div>
-            </button>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
 
-      <Footur />
-    </>
-  );
-};
+      {/* Contact Section */}
+      <div className="container my-5">
+        <div className="row">
+          {/* Contact Info */}
+          <div className="col-lg-4 mb-4 mb-lg-0">
+            <h3 className="mb-4 fw-bold">Contact Info</h3>
+            
+            <div className="mb-4">
+              <div className="d-flex align-items-center mb-3">
+                <div className="icon-wrapper me-3">
+                  <IoLocationOutline size={24} className="text-success" />
+                </div>
+                <h5 className="mb-0">Our Location</h5>
+              </div>
+              <p className="text-muted ps-4">
+                Head-Office 57400 Postal Area, Model Town, Lahore, Punjab
+              </p>
+            </div>
 
-export default SupportPage;
+            <div className="mb-4">
+              <div className="d-flex align-items-center mb-3">
+                <div className="icon-wrapper me-3">
+                  <MdOutlineEmail size={24} className="text-success" />
+                </div>
+                <h5 className="mb-0">Email Address</h5>
+              </div>
+              <p className="text-primary ps-4 mb-0">
+                <a href="mailto:support@pftpedu.org" className="text-decoration-none">
+                  support@pftpedu.org
+                </a>
+              </p>
+            </div>
+
+            <div className="mb-4">
+              <div className="d-flex align-items-center mb-3">
+                <div className="icon-wrapper me-3">
+                  <FiPhone size={24} className="text-success" />
+                </div>
+                <h5 className="mb-0">Phone Number</h5>
+              </div>
+              <div className="ps-4">
+                <p className="text-muted mb-1">+92 (303)-4321118</p>
+                <p className="text-muted mb-0">+92 (318)-4321118</p>
+              </div>
+            </div>
+
+            <div className="social-links mt-4">
+              <a href="#" className="btn btn-light me-2"><FaFacebookF /></a>
+              <a href="#" className="btn btn-light me-2"><FaTwitter /></a>
+              <a href="#" className="btn btn-light me-2"><FaLinkedinIn /></a>
+              <a href="#" className="btn btn-light me-2"><FaYoutube /></a>
+              <a href="#" className="btn btn-light"><FaDribbble /></a>
+            </div>
+          </div>
+
+          {/* Contact Form */}
+          <div className="col-lg-8">
+            <h3 className="mb-4 fw-bold">Get In Touch</h3>
+            <form onSubmit={handleSubmit}>
+              <div className="row">
+                <div className="col-md-6 mb-3">
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Full Name"
+                    name="fullName"
+                    value={formData.fullName}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div className="col-md-6 mb-3">
+                  <input
+                    type="email"
+                    className="form-control"
+                    placeholder="Email Address"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+              </div>
+              <div className="mb-3">
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Subject"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="mb-3">
+                <textarea
+                  className="form-control"
+                  rows={6}
+                  placeholder="Enter Message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                ></textarea>
+              </div>
+              <button 
+                type="submit" 
+                className="btn w-100 py-2 text-white"
+                style={{ backgroundColor: '#0B4619' }}
+              >
+                SEND MESSAGE
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+<Footer/>
+     
+    </div>
+  );
+}
+
+export default ContactPage;

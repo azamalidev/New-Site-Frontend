@@ -1,159 +1,121 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { Facebook, Linkedin, Twitter, Instagram, Youtube, MapPin, Mail, Phone } from 'lucide-react';
 
-const Footur = () => {
+export default function Footer() {
   return (
-    <div className='w-full'>
-      <footer
-        className='text-white py-12 w-full'
-        style={{ backgroundColor: '#0870F9' }} // Background color
-      >
-        <div className='container mx-auto flex flex-col md:flex-row justify-between px-4 md:px-8'>
-          {/* Left Section */}
-          <div className='flex flex-col md:w-1/4 text-left mb-8 md:mb-0'>
-            <h1 className='text-xl sm:text-2xl md:text-3xl font-semibold mb-3'>
-              Lead Gen Pro
-            </h1>
-            <p className='text-xs sm:text-sm md:text-base xl:text-sm sm:whitespace-normal xl:whitespace-nowrap overflow-hidden text-ellipsis'>
-              LeadGenPro: Simplifying motor insurance while empowering you to
-              earn.
-            </p>
-
-            <div className='flex space-x-4 mt-8'>
-              {/* Social Media Icons */}
-              <a
-                href='https://facebook.com'
-                target='_blank'
-                rel='noreferrer'
-              >
-                <i className='fab fa-facebook text-lg sm:text-xl'></i>
-              </a>
-              <a
-                href='https://twitter.com'
-                target='_blank'
-                rel='noreferrer'
-              >
-                <i className='fab fa-twitter text-lg sm:text-xl'></i>
-              </a>
-              <a
-                href='https://instagram.com'
-                target='_blank'
-                rel='noreferrer'
-              >
-                <i className='fab fa-instagram text-lg sm:text-xl'></i>
-              </a>
-            </div>
-          </div>
-
-          {/* Right Section */}
-          <div className='flex flex-col md:flex-row gap-x-10 text-right'>
-            {/* Pages Section */}
-            <div className='md:w-auto'>
-              <h3 className='text-sm sm:text-base md:text-lg font-bold mb-2'>
-                Pages
-              </h3>
-              <ul>
-                <li>
-                  <a
-                    href='/policies'
-                    className='text-xs sm:text-sm md:text-base hover:underline'
-                  >
-                    Policies
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href='/category'
-                    className='text-xs sm:text-sm md:text-base hover:underline'
-                  >
-                    Category
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href='/about-us'
-                    className='text-xs sm:text-sm md:text-base hover:underline'
-                  >
-                    About us
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            {/* Service Section */}
-            <div className='md:w-auto'>
-              <h3 className='text-sm sm:text-base md:text-lg font-bold mb-2'>
-                Service
-              </h3>
-              <ul>
-                <li>
-                  <a
-                    href='/bike-insurance'
-                    className='text-xs sm:text-sm md:text-base hover:underline'
-                  >
-                    Bike insurance
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href='/car-insurance'
-                    className='text-xs sm:text-sm md:text-base hover:underline'
-                  >
-                    Car insurance
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href='/commercial-insurance'
-                    className='text-xs sm:text-sm md:text-base hover:underline'
-                  >
-                    Commercial vehicle <br />
-                    insurance
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            {/* Contact Section */}
-            <div className='md:w-auto'>
-              <h3 className='text-sm sm:text-base md:text-lg font-bold mb-2'>
-                Contact
-              </h3>
-              <ul>
-                <li>
-                  <a
-                    href='tel:000-000-000'
-                    className='text-xs sm:text-sm md:text-base hover:underline'
-                  >
-                    <i className='fas fa-phone-alt mr-2 text-lg sm:text-xl'></i>
-                    000-000-000
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href='mailto:sudesh@example.com'
-                    className='text-xs sm:text-sm md:text-base hover:underline'
-                  >
-                    <i className='fas fa-envelope mr-2 text-lg sm:text-xl'></i>
-                    sudesh@example.com
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href='https://maps.google.com/?q=0000+Lörem+ipsum+St,+City,+Country'
-                    className='text-xs sm:text-sm md:text-base hover:underline'
-                  >
-                    <i className='fas fa-map-marker-alt mr-2 text-lg sm:text-xl'></i>
-                    0000 Lörem ipsum od <br />
-                    ohet dilog 0000.
-                  </a>
-                </li>
-              </ul>
-            </div>
+    <footer className="bg-[#0B4619] text-white py-12">
+      {/* Newsletter Section */}
+      <div className="container mx-auto px-4 mb-12">
+        <div className="bg-[#0B4619] p-8 rounded-lg shadow-lg max-w-4xl mx-auto">
+          <h2 className="text-2xl md:text-3xl text-center mb-6">
+            Get The Latest News & Updates On Your Box
+          </h2>
+          <div className="flex flex-col md:flex-row gap-4">
+            <input
+              type="text"
+              placeholder="Enter your Name"
+              className="flex-1 p-3 rounded text-gray-800"
+            />
+            <input
+              type="email"
+              placeholder="Enter your Email"
+              className="flex-1 p-3 rounded text-gray-800"
+            />
+            <button className="bg-[#FFA500] hover:bg-[#FF8C00] text-black font-semibold py-3 px-6 rounded">
+              SUBMIT
+            </button>
           </div>
         </div>
-      </footer>
-    </div>
-  );
-};
+      </div>
 
-export default Footur;
+      {/* Main Footer Content */}
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Company Info */}
+          <div>
+            <img
+              src="/placeholder.svg" // Ensure the image is in the public folder
+              alt="PFTP Logo"
+              width={200}
+              height={50}
+              className="mb-4"
+            />
+            <p className="mb-6">
+              Professional Freelancing Training Program (PFTP) is an initiative that is highly appreciated by the Government of Pakistan to train the youth in different skill sets.
+            </p>
+            <div className="space-y-2">
+              <div className="flex items-center gap-2">
+                <MapPin className="w-5 h-5 text-[#FFA500]" />
+                <p>General Head Office 484 Airline Society Mian Boulevard, Lahore, Punjab</p>
+              </div>
+              <div className="flex items-center gap-2 no-underline">
+                <Mail className="w-5 h-5 text-[#FFA500] no-underline" />
+                <a href="mailto:support@pftpedu.org">support@pftpedu.org</a>
+              </div>
+              <div className="flex items-center gap-2">
+                <Phone className="w-5 h-5 text-[#FFA500]" />
+                <p>0318-4321118 | 0333-4996687</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Useful Links */}
+          <div>
+            <h3 className="text-xl font-bold mb-6">USEFUL LINKS</h3>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-3">
+                <Link to="#" className="block text-[#f5f4f3] hover:text-[#FF8C00] no-underline">Complete Guide</Link>
+                <Link to="#" className="block text-[#f5f4f3] hover:text-[#FF8C00] no-underline">How to Apply</Link>
+                <Link to="#" className="block text-[#f5f4f3] hover:text-[#3a76f8] no-underline">How to Pay</Link>
+                <Link to="#" className="block text-[#f5f4f3] hover:text-[#FF8C00] no-underline">Terms & Condition</Link>
+                <Link to="#" className="block text-[#f5f4f3] hover:text-[#FF8C00] no-underline">Privacy Policy</Link>
+                <Link to="#" className="block text-[#f5f4f3] hover:text-[#FF8C00] no-underline">SOPS</Link>
+              </div>
+              <div className="space-y-3">
+                <Link to="#" className="block text-[#f5f4f3] hover:text-[#FF8C00] no-underline">Scholarships</Link>
+                <Link to="#" className="block text-[#f5f4f3] hover:text-[#FF8C00] no-underline">Internships</Link>
+                <Link to="#" className="block text-[#f5f4f3] hover:text-[#FF8C00] no-underline">Payment Partner</Link>
+                <Link to="#" className="block text-[#f5f4f3] hover:text-[#FF8C00] no-underline">Contact Us</Link>
+                <Link to="#" className="block text-[#f5f4f3] hover:text-[#FF8C00] no-underline">FAQs</Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Logo */}
+          <div className="flex justify-center md:justify-end">
+            <img
+              src="/placeholder.svg" // Ensure this image is in the public folder
+              alt="Institution Logo"
+              width={300}
+              height={300}
+              className="object-contain"
+            />
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="border-t border-gray-600 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center">
+          <p>Copyright © 2024 | Developed by PFTP</p>
+          <div className="flex gap-4 mt-4 md:mt-0">
+            <Link to="#" className="hover:text-[#FFA500] no-underline icon-triangle">
+              <Facebook className="w-5 h-5" />
+            </Link>
+            <Link to="#" className="hover:text-[#FFA500] no-underline icon-triangle">
+              <Linkedin className="w-5 h-5" />
+            </Link>
+            <Link to="#" className="hover:text-[#FFA500] no-underline icon-triangle">
+              <Twitter className="w-5 h-5" />
+            </Link>
+            <Link to="#" className="hover:text-[#FFA500] no-underline icon-triangle">
+              <Instagram className="w-5 h-5" />
+            </Link>
+            <Link to="#" className="hover:text-[#FFA500] no-underline icon-triangle">
+              <Youtube className="w-5 h-5" />
+            </Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
