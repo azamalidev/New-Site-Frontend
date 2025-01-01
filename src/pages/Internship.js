@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-
+import Header from '../components/Header';
+import Footer from '../components/footur';
 const InternshipSection = () => {
   const [rollNumber, setRollNumber] = useState('');
   const [message, setMessage] = useState('');
@@ -14,6 +15,8 @@ const InternshipSection = () => {
   };
 
   return (
+    <>
+    <Header/>
     <section className="message-area py-10 bg-gray-50">
       <div className="container mx-auto">
         <div className="row text-center mb-10">
@@ -91,7 +94,9 @@ const InternshipSection = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </section>
+    </>
   );
 };
 

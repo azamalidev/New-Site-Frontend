@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Header from "../components/Header";
+import Footer from "../components/footur";
 
 const ScholarshipProgram = () => {
   const [rollNo, setRollNo] = useState("");
@@ -14,6 +16,8 @@ const ScholarshipProgram = () => {
   };
 
   return (
+    <>
+    <Header/>
     <section className="message-area py-12">
       <div className="container mx-auto">
         <div className="row text-center mb-10">
@@ -125,6 +129,8 @@ const ScholarshipProgram = () => {
         </div>
       </div>
     </section>
+    <Footer/>
+    </>
   );
 };
 

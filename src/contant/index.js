@@ -15,5 +15,7 @@ export const routes = {
   verify: "/verify",
   lead: "/lead",
   requestList:"/request-list",
+  internship:"/internship",
+  scholarship: "/scholarship",
 };
 

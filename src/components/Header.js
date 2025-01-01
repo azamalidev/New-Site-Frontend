@@ -11,7 +11,7 @@ const Header = () => {
   const navigate = useNavigate();
   const { profile } = useSelector((state) => state.auth);
   // const dispatch = useDispatch();
-  
+
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -34,6 +34,18 @@ const Header = () => {
   const goToUserDashboard = () => {
     navigate(routes.dashboard);
   };
+  const goToCourses = () => {
+    // navigate(routes.);
+  };
+
+  const gotoOppertunity =(title)=>{
+    if(title == "Scholarship"){
+      navigate(routes.scholarship);
+    }
+    else if(title == "Intership") {
+      navigate(routes.internship);
+    }
+  }
 
   // const goToProfile = () => {
   //   navigate('/profile');
@@ -82,27 +94,13 @@ const Header = () => {
           } absolute lg:static bg-white lg:bg-transparent w-full top-16 left-0 shadow-md lg:shadow-none xl:ml-[10%] xl:ml-[10%]2`}
       >
         <ul className='flex flex-col lg:flex-row items-center space-y-4 lg:space-y-0 lg:space-x-6'>
-          
+
           <ul className="flex space-x-4">
- 
+
             <li className="relative group">
               <button className="text-gray-700 hover:text-black focus:outline-none">
-                Home 
+                Home
               </button>
-
-            
-              <ul
-                className="absolute left-0 mt-2 w-28 bg-white border border-gray-300 shadow-md transform opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-in-out rounded-lg"
-              >
-                <div className="absolute -top-3 right-3 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[8px] border-b-white"></div>
-
-                <li className="px-4 py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">
-                  Submenu 1
-                </li>
-                <li className="px-4 py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">
-                  Submenu 2
-                </li>
-              </ul>
             </li>
 
 
@@ -112,38 +110,24 @@ const Header = () => {
 
 
             {isAuthenticated && (
-              <li className="relative group">
+              <div className="relative group">
                 <button
                   onClick={goToUserDashboard}
                   className="text-gray-700 hover:text-black focus:outline-none"
                 >
                   Dashboard
                 </button>
-                <ul className="absolute left-0 hidden mt-2 w-40 bg-white border border-gray-300 shadow-md group-hover:block">
-                  <li className="px-4 py-2 hover:bg-gray-100">Dashboard Submenu 1</li>
-                  <li className="px-4 py-2 hover:bg-gray-100">Dashboard Submenu 2</li>
-                  <li className="px-4 py-2 hover:bg-gray-100">Dashboard Submenu 3</li>
-                  <li className="px-4 py-2 hover:bg-gray-100">Dashboard Submenu 4</li>
-                </ul>
-              </li>
+                <div className="absolute left-0 w-28 text-center hidden mt-0  bg-white border border-gray-300 shadow-md group-hover:block ">
+                  <h5 className=" py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Submenu 1</h5>
+                  <h5 className=" py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer"> Submenu 2</h5>
+                  <h5 className=" py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Submenu 3</h5>
+                  <h5 className=" py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Submenu 4</h5>
+                </div>
+              </div>
+
             )}
 
-            {isAuthenticated && (
-              <li className="relative group">
-                <button
-                  onClick={() => navigate('/lead')}
-                  className="text-gray-700 hover:text-black"
-                >
-                  Leads
-                </button>
-                <ul className="absolute left-0 hidden mt-2 w-40 bg-white border border-gray-300 shadow-md group-hover:block">
-                  <li className="px-4 py-2 hover:bg-gray-100">Leads Submenu 1</li>
-                  <li className="px-4 py-2 hover:bg-gray-100">Leads Submenu 2</li>
-                  <li className="px-4 py-2 hover:bg-gray-100">Leads Submenu 3</li>
-                  <li className="px-4 py-2 hover:bg-gray-100">Leads Submenu 4</li>
-                </ul>
-              </li>
-            )}
+
 
             <li className="relative group">
               <button className="text-gray-700 hover:text-black focus:outline-none">
@@ -162,39 +146,34 @@ const Header = () => {
               </ul>
             </li>
 
-            <li className="relative group">
-              <button className="text-gray-700 hover:text-black focus:outline-none">
-                Courses
-              </button>
+            {isAuthenticated && (
+              <li className="relative group">
+                <button
 
-              <ul
-                className="absolute left-0 mt-2 w-28 bg-white border border-gray-300 shadow-md transform transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:translate-y-0 opacity-0 -translate-y-4 rounded-lg"
+                  className="text-gray-700 hover:text-black focus:outline-none"
+                >
+                  Courses
+                </button>
+                <ul className="absolute left-0  hidden mt-0 w-28 bg-white border border-gray-300 shadow-md group-hover:block ">
+                  <li onClick={goToCourses} className="py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Online</li>
+                  <li className=" py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Physical</li>
+                </ul>
+              </li>
+
+            )}
+
+            <div className="relative group">
+              <button
+
+                className="text-gray-700 hover:text-black focus:outline-none"
               >
-
-                <div
-                  className="absolute -top-3 right-3 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[8px] border-b-white"></div>
-
-                <li className="px-4 py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Onsite</li>
-                <li className="px-4 py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Online</li>
-              </ul>
-            </li>
-
-            <li className="relative group">
-              <button className="text-gray-700 hover:text-black focus:outline-none">
                 Opportunities
               </button>
-
-              <ul
-                className="absolute left-0 mt-2 w-28 bg-white border border-gray-300 shadow-md transform transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:translate-y-0 opacity-0 -translate-y-4 rounded-lg"
-              >
-
-                <div
-                  className="absolute -top-3 right-3 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[8px] border-b-white"></div>
-
-                <li className="px-4 py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Submenu 1</li>
-                <li className="px-4 py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Submenu 2</li>
-              </ul>
-            </li>
+              <div className="absolute left-0 text-center h-fit  hidden mt-0 w-28 bg-white border border-gray-300 shadow-md group-hover:block ">
+                <h5 onClick={()=> {gotoOppertunity("Scholarship")}} className="py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Scholarship</h5>
+                <h5 onClick={()=> {gotoOppertunity("Intership")}} className=" py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Intership</h5>
+              </div>
+            </div>
 
             <li className="relative group">
               <button className="text-gray-700 hover:text-black focus:outline-none">
@@ -229,55 +208,55 @@ const Header = () => {
                 <li className="px-4 py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Submenu 2</li>
               </ul>
             </li>
-          <li
-      className="relative"
-      onMouseEnter={() => setIsDropdownOpen(true)}
-      onMouseLeave={() => setIsDropdownOpen(false)}
-    >
-      <button
-        className="text-gray-700 hover:text-black focus:outline-none"
-      >
-        OUR EVENTS
-      </button>
+            <li
+              className="relative"
+              onMouseEnter={() => setIsDropdownOpen(true)}
+              onMouseLeave={() => setIsDropdownOpen(false)}
+            >
+              <button
+                className="text-gray-700 hover:text-black focus:outline-none"
+              >
+                OUR EVENTS
+              </button>
 
-      {/* Dropdown */}
-      {isDropdownOpen && (
-        <ul className="absolute top-full left-0 bg-white shadow-lg border rounded-md w-48">
-          <li>
-            <button
-              onClick={() => navigate('/event-1')}
-              className="block w-full text-left px-4 py-2 hover:bg-gray-100"
-            >
-              Event 1
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => navigate('/event-2')}
-              className="block w-full text-left px-4 py-2 hover:bg-gray-100"
-            >
-              Event 2
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => navigate('/event-3')}
-              className="block w-full text-left px-4 py-2 hover:bg-gray-100"
-            >
-              Event 3
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => navigate('/event-4')}
-              className="block w-full text-left px-4 py-2 hover:bg-gray-100"
-            >
-              Event 4
-            </button>
-          </li>
-        </ul>
-      )}
-    </li>
+              {/* Dropdown */}
+              {isDropdownOpen && (
+                <ul className="absolute top-full left-0 bg-white shadow-lg border rounded-md w-48">
+                  <li>
+                    <button
+                      onClick={() => navigate('/event-1')}
+                      className="block w-full text-left px-4 py-2 hover:bg-gray-100"
+                    >
+                      Event 1
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      onClick={() => navigate('/event-2')}
+                      className="block w-full text-left px-4 py-2 hover:bg-gray-100"
+                    >
+                      Event 2
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      onClick={() => navigate('/event-3')}
+                      className="block w-full text-left px-4 py-2 hover:bg-gray-100"
+                    >
+                      Event 3
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      onClick={() => navigate('/event-4')}
+                      className="block w-full text-left px-4 py-2 hover:bg-gray-100"
+                    >
+                      Event 4
+                    </button>
+                  </li>
+                </ul>
+              )}
+            </li>
 
             <li className="relative group">
               <button className="text-gray-700 hover:text-black focus:outline-none">
@@ -374,7 +353,7 @@ const Header = () => {
                 to={routes.profile}
                 className='block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer'
               >
-                Profile hh
+                Profile
               </Link>
             </li>
             <li>
