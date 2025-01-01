@@ -16,7 +16,10 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import carImage from "../assets/image/car.png";
 import BikeImage from "../assets/image/Bike.png";
 import Truck from "../assets/image/truk.png";
-import TabComponent from "./EventsTabs.js";
+import Cards from "../components/Cards.js";
+import videodm from '../assets/image/videodm.mp4'
+import Testimonials from "../components/Testimonials.js";
+import Card2 from "../components/Cards2.js";import TabComponent from "./EventsTabs.js";
 import Carousel from "./VideoCrasuals.js";
 
 const HomePage = () => {
@@ -28,7 +31,7 @@ const HomePage = () => {
     <div className="font-sans leading-normal text-gray-800">
       <Header />
 
-      {authenticate ? (
+      {/* {authenticate ? (
         "Some section here !"
       ) : (
         <section className="relative mt-4 text-center mx-auto">
@@ -46,7 +49,7 @@ const HomePage = () => {
             modules={[Navigation, Pagination, Autoplay]}
             className="w-full h-[400px] opacity-90 mx-auto rounded-lg"
           >
-            {/* Slide 1 */}
+           
             <SwiperSlide>
               <div
                 className="relative h-full flex items-center justify-center"
@@ -75,7 +78,7 @@ const HomePage = () => {
                     damages. Drive with confidence, knowing you're covered.
                   </p>
                 </div>
-                {/* Car Image - Right aligned */}
+              
                 <img
                   src={carImage}
                   alt="Car"
@@ -84,7 +87,7 @@ const HomePage = () => {
               </div>
             </SwiperSlide>
 
-            {/* Slide 2 */}
+       
             <SwiperSlide>
               <div
                 className="relative h-full flex items-center justify-center"
@@ -114,7 +117,7 @@ const HomePage = () => {
                     we cover the rest
                   </p>
                 </div>
-                {/* Bike Image - Right aligned */}
+                
                 <img
                   src={BikeImage}
                   alt="Bike"
@@ -123,7 +126,7 @@ const HomePage = () => {
               </div>
             </SwiperSlide>
 
-            {/* Slide 3 */}
+     
             <SwiperSlide>
               <div
                 className="relative h-full flex items-center justify-center"
@@ -156,7 +159,7 @@ const HomePage = () => {
                     Insure your car today and drive worry-free tomorrow!
                   </p>
                 </div>
-                {/* Truck Image - Right aligned */}
+              
                 <img
                   src={Truck}
                   alt="Truck"
@@ -168,10 +171,42 @@ const HomePage = () => {
 
           <button className="swiper-button-next"></button>
         </section>
-      )}
+      )}    */}
+
+      <div className="relative w-full h-screen">
+
+        <video
+          src={videodm}
+          autoPlay
+          muted
+          loop
+          className="w-full h-screen object-cover"
+        />
+        <div className="absolute inset-0 flex items-center justify-center text-center">
+          <div className="p-4">
+       
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-blue-600 to-cyan-500 text-transparent bg-clip-text drop-shadow-2xl">
+              Empower Your Learning Journey
+            </h1>
+
+            <p className="text-lg sm:text-xl md:text-2xl font-medium leading-relaxed text-cyan-100 drop-shadow-lg">
+              Access top-tier courses designed to enhance your skills.<br />
+              Learn anywhere, anytime, and transform your future.
+            </p>
+
+      
+            <button className="mt-6 px-6 py-3 bg-gradient-to-r from-blue-500 via-cyan-600 to-blue-700 hover:from-cyan-700 hover:to-blue-500 text-white font-semibold text-lg rounded-lg shadow-lg transform hover:scale-110 transition duration-300">
+              Start Learning Now
+            </button>
+          </div>
+        </div>
+      </div>
+
 
       <section className="relative mt-4 text-center mx-auto">
-        <Features />
+        <Cards />
+        <Testimonials />
+        <Card2/>
         <ChooseUs />
         <Avatar />
         <Cover />
@@ -179,6 +214,7 @@ const HomePage = () => {
         <Carousel/>
         <TabComponent/>
         <Footur />
+
       </section>
     </div>
   );

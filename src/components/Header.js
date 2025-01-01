@@ -78,68 +78,157 @@ const Header = () => {
 
       {/* Navigation */}
       <nav
-        className={`lg:flex ${
-          isMenuOpen ? 'block' : 'hidden'
-        } absolute lg:static bg-white lg:bg-transparent w-full top-16 left-0 shadow-md lg:shadow-none xl:ml-[10%] xl:ml-[10%]2`}
+        className={`lg:flex ${isMenuOpen ? 'block' : 'hidden'
+          } absolute lg:static bg-white lg:bg-transparent w-full top-16 left-0 shadow-md lg:shadow-none xl:ml-[10%] xl:ml-[10%]2`}
       >
         <ul className='flex flex-col lg:flex-row items-center space-y-4 lg:space-y-0 lg:space-x-6'>
-          <li>
-            <button
-              onClick={() => navigate(routes.main)}
-              className='text-gray-700 hover:text-black focus:outline-none'
-            >
-              Home
-            </button>
-          </li>
-
-          {isAuthenticated && (
-            <li>
-              <button
-                onClick={goToUserDashboard}
-                className='text-gray-700 hover:text-black focus:outline-none'
-              >
-                Dashboard
+          
+          <ul className="flex space-x-4">
+ 
+            <li className="relative group">
+              <button className="text-gray-700 hover:text-black focus:outline-none">
+                Home 
               </button>
-            </li>
-          )}
 
-          {isAuthenticated && (
-            <li>
-              <button
-                onClick={() => navigate('/lead')}
-                className='text-gray-700 hover:text-black'
+            
+              <ul
+                className="absolute left-0 mt-2 w-28 bg-white border border-gray-300 shadow-md transform opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-in-out rounded-lg"
               >
-                Leads
-              </button>
+                <div className="absolute -top-3 right-3 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[8px] border-b-white"></div>
+
+                <li className="px-4 py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">
+                  Submenu 1
+                </li>
+                <li className="px-4 py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">
+                  Submenu 2
+                </li>
+              </ul>
             </li>
-          )}
 
-          <li>
-            <a
-              href='#'
-              className='text-gray-700 hover:text-black'
-            >
-              Category
-            </a>
-          </li>
 
-          <li>
-            <Link
-              to={routes.aboutUs}
-              className='text-gray-700 hover:text-black'
-            >
-              About Us
-            </Link>
-          </li>
 
-          <li>
-            <button
-              onClick={() => navigate(routes.support)}
-              className='text-gray-700 hover:text-black focus:outline-none'
-            >
-              Support
-            </button>
-          </li>
+
+
+
+
+            {isAuthenticated && (
+              <li className="relative group">
+                <button
+                  onClick={goToUserDashboard}
+                  className="text-gray-700 hover:text-black focus:outline-none"
+                >
+                  Dashboard
+                </button>
+                <ul className="absolute left-0 hidden mt-2 w-40 bg-white border border-gray-300 shadow-md group-hover:block">
+                  <li className="px-4 py-2 hover:bg-gray-100">Dashboard Submenu 1</li>
+                  <li className="px-4 py-2 hover:bg-gray-100">Dashboard Submenu 2</li>
+                  <li className="px-4 py-2 hover:bg-gray-100">Dashboard Submenu 3</li>
+                  <li className="px-4 py-2 hover:bg-gray-100">Dashboard Submenu 4</li>
+                </ul>
+              </li>
+            )}
+
+            {isAuthenticated && (
+              <li className="relative group">
+                <button
+                  onClick={() => navigate('/lead')}
+                  className="text-gray-700 hover:text-black"
+                >
+                  Leads
+                </button>
+                <ul className="absolute left-0 hidden mt-2 w-40 bg-white border border-gray-300 shadow-md group-hover:block">
+                  <li className="px-4 py-2 hover:bg-gray-100">Leads Submenu 1</li>
+                  <li className="px-4 py-2 hover:bg-gray-100">Leads Submenu 2</li>
+                  <li className="px-4 py-2 hover:bg-gray-100">Leads Submenu 3</li>
+                  <li className="px-4 py-2 hover:bg-gray-100">Leads Submenu 4</li>
+                </ul>
+              </li>
+            )}
+
+            <li className="relative group">
+              <button className="text-gray-700 hover:text-black focus:outline-none">
+                About Us
+              </button>
+
+              <ul
+                className="absolute left-0 mt-2 w-28 bg-white border border-gray-300 shadow-md transform transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:translate-y-0 opacity-0 -translate-y-4 rounded-lg"
+              >
+
+                <div
+                  className="absolute -top-3 right-3 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[8px] border-b-white"></div>
+
+                <li className="px-4 py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer"> Submenu 1 </li>
+                <li className="px-4 py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Submenu 2</li>
+              </ul>
+            </li>
+
+            <li className="relative group">
+              <button className="text-gray-700 hover:text-black focus:outline-none">
+                Courses
+              </button>
+
+              <ul
+                className="absolute left-0 mt-2 w-28 bg-white border border-gray-300 shadow-md transform transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:translate-y-0 opacity-0 -translate-y-4 rounded-lg"
+              >
+
+                <div
+                  className="absolute -top-3 right-3 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[8px] border-b-white"></div>
+
+                <li className="px-4 py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Onsite</li>
+                <li className="px-4 py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Online</li>
+              </ul>
+            </li>
+
+            <li className="relative group">
+              <button className="text-gray-700 hover:text-black focus:outline-none">
+                Opportunities
+              </button>
+
+              <ul
+                className="absolute left-0 mt-2 w-28 bg-white border border-gray-300 shadow-md transform transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:translate-y-0 opacity-0 -translate-y-4 rounded-lg"
+              >
+
+                <div
+                  className="absolute -top-3 right-3 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[8px] border-b-white"></div>
+
+                <li className="px-4 py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Submenu 1</li>
+                <li className="px-4 py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Submenu 2</li>
+              </ul>
+            </li>
+
+            <li className="relative group">
+              <button className="text-gray-700 hover:text-black focus:outline-none">
+                Info Desk
+              </button>
+
+              <ul
+                className="absolute left-0 mt-2 w-28 bg-white border border-gray-300 shadow-md transform transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:translate-y-0 opacity-0 -translate-y-4 rounded-lg"
+              >
+
+                <div
+                  className="absolute -top-3 right-3 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[8px] border-b-white"></div>
+
+                <li className="px-4 py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Submenu 1</li>
+                <li className="px-4 py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Submenu 2</li>
+              </ul>
+            </li>
+
+            <li className="relative group">
+              <button className="text-gray-700 hover:text-black focus:outline-none">
+                Join Hands
+              </button>
+
+              <ul
+                className="absolute left-0 mt-2 w-28 bg-white border border-gray-300 shadow-md transform transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:translate-y-0 opacity-0 -translate-y-4 rounded-lg"
+              >
+
+                <div
+                  className="absolute -top-3 right-3 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[8px] border-b-white"></div>
+
+                <li className="px-4 py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Submenu 1</li>
+                <li className="px-4 py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Submenu 2</li>
+              </ul>
+            </li>
           <li
       className="relative"
       onMouseEnter={() => setIsDropdownOpen(true)}
@@ -190,7 +279,25 @@ const Header = () => {
       )}
     </li>
 
-          {isAuthenticated ? (
+            <li className="relative group">
+              <button className="text-gray-700 hover:text-black focus:outline-none">
+                Our Events
+              </button>
+
+              <ul
+                className="absolute left-0 mt-2 w-28 bg-white border border-gray-300 shadow-md transform transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:translate-y-0 opacity-0 -translate-y-4 rounded-lg"
+              >
+
+                <div
+                  className="absolute -top-3 right-3 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[8px] border-b-white"></div>
+
+                <li className="px-4 py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Submenu 1</li>
+                <li className="px-4 py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Submenu 2</li>
+              </ul>
+            </li>
+          </ul>
+
+          {/* {isAuthenticated ? (
             <li>
               <Link
                 to={routes.quotation}
@@ -205,10 +312,10 @@ const Header = () => {
                 to={routes.signin}
                 className='text-[#56D9B9] font-semibold hover:text-teal-600'
               >
-                Become Pro Lead Partner
+                Info Desk
               </Link>
             </li>
-          )}
+          )} */}
         </ul>
       </nav>
 
@@ -267,7 +374,7 @@ const Header = () => {
                 to={routes.profile}
                 className='block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer'
               >
-                Profile
+                Profile hh
               </Link>
             </li>
             <li>
