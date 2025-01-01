@@ -4,13 +4,13 @@ import BellIcon from '../assets/icons/bell';
 import { routes } from '../contant';
 import { Link, useNavigate } from 'react-router-dom';
 import Logo from '../assets/image/Logo.png';
-import { getProfile } from '../redux/action/auth';
+// import { getProfile } from '../redux/action/auth';
 import { useDispatch, useSelector } from 'react-redux';
 
 const Header = () => {
   const navigate = useNavigate();
   const { profile } = useSelector((state) => state.auth);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -35,16 +35,16 @@ const Header = () => {
     navigate(routes.dashboard);
   };
 
-  const goToProfile = () => {
-    navigate('/profile');
-    setIsOpen(false);
-  };
+  // const goToProfile = () => {
+  //   navigate('/profile');
+  //   setIsOpen(false);
+  // };
 
-  useEffect(() => {
-    if (isAuthenticated) {
-      dispatch(getProfile());
-    }
-  }, [dispatch]);
+  // useEffect(() => {
+  //   if (isAuthenticated) {
+  //     dispatch(getProfile());
+  //   }
+  // }, [dispatch]);
 
   return (
     <header
