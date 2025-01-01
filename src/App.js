@@ -21,6 +21,10 @@ import Lead from './pages/Lead';
 import { routes } from './contant';
 import SupportPage from './pages/Support'
 import RequestList from './components/RequestList';
+import Event1 from './pages/Event1';
+import Events2 from './pages/Events2';
+import Event3 from './pages/Event3';
+import Event4 from './pages/Event4';
 
 
 // Public Route Component
@@ -103,6 +107,38 @@ function App() {
   element={
     <PrivateRoute isAuthenticated={isAuthenticated}>
       <Lead />
+    </PrivateRoute>
+  }
+/>
+<Route
+  path="/event-1"
+  element={
+    <PrivateRoute>
+      <Event1/>
+    </PrivateRoute>
+  }
+/>
+<Route
+  path="/event-2"
+  element={
+    <PrivateRoute>
+      <Events2/>
+    </PrivateRoute>
+  }
+/>
+<Route
+  path="/event-3"
+  element={
+    <PrivateRoute>
+      <Event3/>
+    </PrivateRoute>
+  }
+/>
+<Route
+  path="/event-4"
+  element={
+    <PrivateRoute>
+      <Event4/>
     </PrivateRoute>
   }
 />
