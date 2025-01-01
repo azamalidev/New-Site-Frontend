@@ -19,7 +19,9 @@ import Truck from "../assets/image/truk.png";
 import Cards from "../components/Cards.js";
 import videodm from '../assets/image/videodm.mp4'
 import Testimonials from "../components/Testimonials.js";
-import Card2 from "../components/Cards2.js";
+import Card2 from "../components/Cards2.js";import TabComponent from "./EventsTabs.js";
+import Carousel from "./VideoCrasuals.js";
+
 import FAQPage from "../components/FAQPage.js";
 const HomePage = () => {
   const data = useSelector((state) => state.data); // Access Redux state
@@ -211,6 +213,8 @@ const HomePage = () => {
         <Avatar />
         <Cover />
         <Reviewbox /> */}
+        <Carousel/>
+        <TabComponent/>
         <Footur />
 
       </section>
