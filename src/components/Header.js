@@ -11,6 +11,8 @@ const Header = () => {
   const navigate = useNavigate();
   const { profile } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
+  
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false); // For mobile menu toggle
@@ -138,6 +140,55 @@ const Header = () => {
               Support
             </button>
           </li>
+          <li
+      className="relative"
+      onMouseEnter={() => setIsDropdownOpen(true)}
+      onMouseLeave={() => setIsDropdownOpen(false)}
+    >
+      <button
+        className="text-gray-700 hover:text-black focus:outline-none"
+      >
+        OUR EVENTS
+      </button>
+
+      {/* Dropdown */}
+      {isDropdownOpen && (
+        <ul className="absolute top-full left-0 bg-white shadow-lg border rounded-md w-48">
+          <li>
+            <button
+              onClick={() => navigate('/event-1')}
+              className="block w-full text-left px-4 py-2 hover:bg-gray-100"
+            >
+              Event 1
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() => navigate('/event-2')}
+              className="block w-full text-left px-4 py-2 hover:bg-gray-100"
+            >
+              Event 2
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() => navigate('/event-3')}
+              className="block w-full text-left px-4 py-2 hover:bg-gray-100"
+            >
+              Event 3
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() => navigate('/event-4')}
+              className="block w-full text-left px-4 py-2 hover:bg-gray-100"
+            >
+              Event 4
+            </button>
+          </li>
+        </ul>
+      )}
+    </li>
 
           {isAuthenticated ? (
             <li>

@@ -16,6 +16,8 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import carImage from "../assets/image/car.png";
 import BikeImage from "../assets/image/Bike.png";
 import Truck from "../assets/image/truk.png";
+import TabComponent from "./EventsTabs.js";
+import Carousel from "./VideoCrasuals.js";
 
 const HomePage = () => {
   const data = useSelector((state) => state.data); // Access Redux state
@@ -174,6 +176,8 @@ const HomePage = () => {
         <Avatar />
         <Cover />
         <Reviewbox />
+        <Carousel/>
+        <TabComponent/>
         <Footur />
       </section>
     </div>
