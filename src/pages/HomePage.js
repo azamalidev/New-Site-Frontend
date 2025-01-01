@@ -20,6 +20,7 @@ import Cards from "../components/Cards.js";
 import videodm from '../assets/image/videodm.mp4'
 import Testimonials from "../components/Testimonials.js";
 import Card2 from "../components/Cards2.js";
+import FAQPage from "../components/FAQPage.js";
 const HomePage = () => {
   const data = useSelector((state) => state.data); // Access Redux state
   const authenticate = localStorage.getItem("token");
@@ -205,10 +206,11 @@ const HomePage = () => {
         <Cards />
         <Testimonials />
         <Card2/>
-        <ChooseUs />
+        <FAQPage/>
+        {/* <ChooseUs />
         <Avatar />
         <Cover />
-        <Reviewbox />
+        <Reviewbox /> */}
         <Footur />
 
       </section>
