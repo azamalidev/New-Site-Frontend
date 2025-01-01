@@ -14,7 +14,7 @@ const Card2 = () => {
       {/* Content Section - Hidden by default, shown on hover */}
       <div className="absolute inset-0 bg-white flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <h2 className="text-lg font-semibold text-gray-800">Ayub Ghauri</h2>
-        <p className="text-sm text-gray-600 mt-1">Founder-HospitALL</p>
+        <p className="text-sm text-gray-600 mt-1">Founder-HospitALL hh</p>
         <p className="text-sm text-gray-600">CTO NETSOL</p>
       </div>
     </div>
