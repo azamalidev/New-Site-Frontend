@@ -25,7 +25,8 @@ import Event1 from './pages/Event1';
 import Events2 from './pages/Events2';
 import Event3 from './pages/Event3';
 import Event4 from './pages/Event4';
-
+import InternshipSection from './pages/Internship'
+import ScholarshipProgram from './pages/Scholarship'
 
 // Public Route Component
 const PublicRoute = ({ isAuthenticated, children }) => {
@@ -208,6 +209,20 @@ function App() {
           path='/'
           element={<Navigate to={routes.main} />}
         />
+        {/* <Route
+          path={routes.CourseSelection}
+          element={<CourseSelection />}
+        /> */}
+        <Route
+          path={routes.internship}
+          element={<InternshipSection/>}
+        />
+
+        <Route
+          path={routes.scholarship}
+          element={<ScholarshipProgram/>}
+        />
+      
       </Routes>
     </Router>
   );
