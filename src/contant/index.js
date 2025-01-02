@@ -1,7 +1,7 @@
 import Profile from "../pages/Profile";
 export const routes = {
   main: "/",
-  homePage: "/home",
+  homePage: "/homepage",
   account: "/account",
   signup: "/signup",
   signin: "/signin",

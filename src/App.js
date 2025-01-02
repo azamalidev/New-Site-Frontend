@@ -83,8 +83,9 @@ function App() {
   return (
     <Router>
       <Routes>
+        
         <Route
-          path={routes.main}
+          path={routes.homePage}
           element={<HomePage />}
         />
         <Route
