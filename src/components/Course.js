@@ -14,9 +14,7 @@ import Img12 from '../assets/image/Img12.png'
 import Img13 from '../assets/image/Img13.png'
 import Img14 from '../assets/image/Img14.png'
 
-
-
-const Cards = () => {
+const Course = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [visibleCourses, setVisibleCourses] = useState(6); // Initially showing 6 courses
 
@@ -49,7 +47,7 @@ const Cards = () => {
   };
 
   return (
-    <div className="mt-10 p-6 bg-gradient-to-r from-teal-500 to-indigo-500">
+    <div className=" p-6 bg-gradient-to-r from-teal-500 to-indigo-500">
       <div className="text-center mb-6">
         <h1 className="text-3xl font-extrabold text-white">
           PFTP has collaborated with NIAIS for onsite Trainings
@@ -129,5 +127,5 @@ const Cards = () => {
   );
 };
 
-export default Cards;
+export default Course;
 

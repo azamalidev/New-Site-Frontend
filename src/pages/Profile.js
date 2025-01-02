@@ -155,9 +155,7 @@ const ProfilePage = () => {
                   <h1 className='text-3xl font-bold text-gray-800'>
                     {formData?.name}
                   </h1>
-                  <p className='text-lg text-gray-600 mt-2'>
-                    ({formData?.profession})
-                  </p>
+                
                   <div className='mt-4'>
                     <p className='text-lg text-gray-600'>{formData?.phone}</p>
                     <p className='text-lg text-gray-600 mt-2'>
@@ -192,25 +190,8 @@ const ProfilePage = () => {
                     { label: 'email', placeholder: 'Enter your email' },
                     { label: 'phone', placeholder: 'Enter your phone number' },
                     {
-                      label: 'profession',
-                      placeholder: 'Select your profession',
-                      type: 'select',
-                      options: [
-                        'College Student',
-                        'Business Owner/Shop',
-                        'House Wife',
-                        'Retired Person',
-                        'Others',
-                      ],
-                    },
-                    {
                       label: 'profilePhoto',
                       placeholder: 'Upload Profile Photo',
-                      type: 'file',
-                    },
-                    {
-                      label: 'QRCode',
-                      placeholder: 'Upload QR Code',
                       type: 'file',
                     },
                   ].map((field) => (

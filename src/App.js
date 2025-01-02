@@ -9,15 +9,13 @@ import {
 } from 'react-router-dom';
 import SignUp from './pages/SignUp';
 import SignIn from './pages/SignIn';
-import Account from './pages/Account';
 import RecoverPassword from './pages/RecoverPassword';
 import ResetPassword from './pages/ResetPassword';
 import HomePage from './pages/HomePage';
 import AboutUs from './pages/AboutUs';
-import UserDashboard from './pages/UserDashboard';
 import Profile from './pages/Profile';
-import Quotation from './pages/Quotation';
-import Lead from './pages/Lead';
+import LMS from './pages/LMS';
+import CoursePage from './pages/coursesPage'
 import { routes } from './contant';
 import SupportPage from './pages/Support'
 import RequestList from './components/RequestList';
@@ -73,7 +71,10 @@ function App() {
   useEffect(() => {
     const token = localStorage.getItem('token');
     setIsAuthenticated(!!token);
-    setLoading(false);
+    setTimeout(()=>{
+      setLoading(false);
+
+    }, [500])
   }, []);
 
   if (loading) {
@@ -85,7 +86,7 @@ function App() {
       <Routes>
         
         <Route
-          path={routes.homePage}
+          path={routes.main}
           element={<HomePage />}
         />
         <Route
@@ -96,22 +97,7 @@ function App() {
           path={routes.support}
           element={<SupportPage />}
         />
-        <Route
-          path={routes.dashboard}
-          element={
-            <PrivateRoute >
-              <UserDashboard />
-            </PrivateRoute>
-          }
-        />
-        <Route
-  path={routes.lead}
-  element={
-    <PrivateRoute isAuthenticated={isAuthenticated}>
-      <Lead />
-    </PrivateRoute>
-  }
-/>
+       
 <Route
   path="/event-1"
   element={
@@ -137,6 +123,14 @@ function App() {
   }
 />
 <Route
+  path={routes.course}
+  element={
+    <PrivateRoute>
+      <CoursePage/>
+    </PrivateRoute>
+  }
+/>
+<Route
   path="/event-4"
   element={
     <PrivateRoute>
@@ -155,21 +149,14 @@ function App() {
 
 
         <Route
-          path={routes.quotation}
+          path={routes.lms}
           element={
             <PrivateRoute >
-              <Quotation />
+              <LMS />
             </PrivateRoute>
           }
         />
-        <Route
-          path={routes.account}
-          element={
-            <PublicRoute >
-              <Account />
-            </PublicRoute>
-          }
-        />
+       
         <Route
           path={routes.profile}
           element={

@@ -3,7 +3,7 @@ import ProfileIcon from '../assets/icons/profile';
 import BellIcon from '../assets/icons/bell';
 import { routes } from '../contant';
 import { Link, useNavigate } from 'react-router-dom';
-import Logo from '../assets/image/Logo.png';
+// import Logo from '../assets/image/Logo.png';
 // import { getProfile } from '../redux/action/auth';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -38,7 +38,7 @@ const Header = () => {
     // navigate(routes.);
   };
  const gotoHomePage = () =>{
-  navigate(routes.homePage);
+  navigate(routes.main);
  }
 
  const gotoAboutUs = ()=>{
@@ -54,10 +54,16 @@ const Header = () => {
     }
   }
 
-  // const goToProfile = () => {
-  //   navigate('/profile');
-  //   setIsOpen(false);
-  // };
+  const goToCourse = (page) => {
+    if(page == 'Online'){
+      navigate(routes.course);
+
+    }if(page=='Physical'){
+      navigate(routes.course);
+
+    }
+   
+  };
 
   // useEffect(() => {
   //   if (isAuthenticated) {
@@ -74,20 +80,11 @@ const Header = () => {
         zIndex: 999,
         backgroundColor: 'white',
         boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
-        padding: '16px 24px',
+       
       }}
       className='flex justify-between items-center bg-white py-4 px-6 shadow-md'
     >
-      {/* Logo */}
-      <img
-        src={Logo}
-        style={{ width: '10rem', height: '3rem', cursor: 'pointer' }}
-        alt='Logo'
-        onClick={() => navigate(routes.main)}
-        className='lg:w-40 lg:h-12 w-32 h-10' // Adjust size for mobile
-      />
-
-      {/* Mobile Menu Button */}
+     <h5> Logo</h5>
       <button
         className='lg:hidden text-gray-700 focus:outline-none'
         onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -98,7 +95,7 @@ const Header = () => {
       {/* Navigation */}
       <nav
         className={`lg:flex ${isMenuOpen ? 'block' : 'hidden'
-          } absolute lg:static bg-white lg:bg-transparent w-full top-16 left-0 shadow-md lg:shadow-none xl:ml-[10%] xl:ml-[10%]2`}
+          } absolute lg:static bg-white lg:bg-transparent w-full top-16 left-0 shadow-md lg:shadow-none xl:ml-[10%] xl:ml-[10%]`}
       >
         <ul className='flex flex-col lg:flex-row items-center space-y-4 lg:space-y-0 lg:space-x-6'>
 
@@ -114,25 +111,6 @@ const Header = () => {
 
 
 
-
-
-            {isAuthenticated && (
-              <div className="relative group">
-                <button
-                  onClick={goToUserDashboard}
-                  className="text-gray-700 hover:text-black focus:outline-none "
-                >
-                  Dashboard
-                </button>
-                <div className="absolute rounded-md left-0 w-28 text-center hidden mt-0  bg-white border border-gray-300 shadow-md group-hover:block ">
-                  <h5 className=" py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Submenu 1</h5>
-                  <h5 className=" py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer"> Submenu 2</h5>
-                  <h5 className=" py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Submenu 3</h5>
-                  <h5 className=" py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Submenu 4</h5>
-                </div>
-              </div>
-
-            )}
 
 
 
@@ -163,8 +141,8 @@ const Header = () => {
                   Courses
                 </button>
                 <div className="absolute left-0 text-center rounded-md  hidden mt-0 w-28 bg-white border border-gray-300 shadow-md group-hover:block ">
-                  <h5 className=" py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Online</h5>
-                  <h5 className=" py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Physical</h5>
+                  <h5 onClick={()=> goToCourse("Online")} className=" py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Online</h5>
+                  <h5  onClick={()=> goToCourse("Physical")} className=" py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Physical</h5>
                 </div>
               </div>
 
@@ -191,8 +169,10 @@ const Header = () => {
                   Info Desk
                 </button>
                 <div className="absolute left-0 text-center rounded-md  hidden mt-0 w-28 bg-white border border-gray-300 shadow-md group-hover:block ">
-                  <h5 className=" py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Submenu 1</h5>
-                  <h5 className=" py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Submenu 2</h5>
+                  <h5 className=" py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">create Account?</h5>
+                  <h5 className=" py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">How to register cours?</h5>
+                  <h5 className=" py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">How to setup student LMS?</h5>
+                  <h5 className=" py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">News for you</h5>
                 </div>
               </div>
 
@@ -260,25 +240,18 @@ const Header = () => {
 
           </ul>
 
-          {/* {isAuthenticated ? (
+           {isAuthenticated ? (
             <li>
               <Link
-                to={routes.quotation}
+                to={routes.lms}
                 className='text-[#56D9B9] font-semibold hover:text-teal-600'
               >
-                Generate Quotation
+                LMS
               </Link>
             </li>
           ) : (
-            <li>
-              <Link
-                to={routes.signin}
-                className='text-[#56D9B9] font-semibold hover:text-teal-600'
-              >
-                Info Desk
-              </Link>
-            </li>
-          )} */}
+           ""
+          )} 
         </ul>
       </nav>
 
@@ -330,7 +303,7 @@ const Header = () => {
       </div>
 
       {isOpen && (
-        <div className='absolute right-0 mt-[40vh] w-48 bg-white border rounded-lg shadow-lg z-50'>
+        <div className='absolute right-0 mt-[27vh] w-48 bg-white border rounded-lg shadow-lg z-50'>
           <ul className='py-2'>
             <li>
               <Link
@@ -339,22 +312,6 @@ const Header = () => {
               >
                 Profile
               </Link>
-            </li>
-            <li>
-              <Link
-                to={routes.lead}
-                className='block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer'
-              >
-                My Request
-              </Link>
-            </li>
-            <li>
-              <button
-                onClick={goToUserDashboard}
-                className='w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer'
-              >
-                Dashboard
-              </button>
             </li>
             <li>
               <button

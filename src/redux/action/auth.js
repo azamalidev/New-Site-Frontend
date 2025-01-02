@@ -17,7 +17,7 @@ const GET_EMPLOYEE_DATA = 'GET_EMPLOYEE_DATA';
 const API_BASE_URL = 'http://localhost:3000';
 
 export const sendSignupLink =
-  (email, userType = 'ProLeadPartner') =>
+  (email, userType = 'Student') =>
   async (dispatch) => {
     localStorage.setItem('userEmail', email);
     try {
@@ -37,15 +37,12 @@ export const sendSignupLink =
   };
 
 export const firebaseResetPasswordEmail =
-  (email, userType = 'ProLeadPartner') =>
+  (email) =>
   async (dispatch) => {
     try {
-      localStorage.setItem('userEmail', email);
       const userCredential = await sendPasswordResetEmail(auth, email);
-      toast.success('Email sent for reset password');
       return userCredential;
     } catch (error) {
-      toast.error(error.message);
       return error;
     }
   };
@@ -137,20 +134,22 @@ const firebaseVarifyEmail = async (email, password = '12345678') => {
   }
 };
 
-export const submitAccount = (formData, navigate) => async (dispatch) => {
+export const addAccount = (formData, navigate) => async (dispatch) => {
   try {
     const response = await axios.post(
       `${API_BASE_URL}/users/account-setup`,
       formData
     );
     if (response) {
+      firebaseVarifyEmail(formData?.email)
       toast.success(response?.data?.message || 'Account created successfully!');
       setTimeout(() => {
         navigate(routes.signin);
       }, 2000);
     }
   } catch (error) {
-    toast.error(error.message);
+
+    toast.error(error?.response?.data?.message);
     return error;
   }
 };
