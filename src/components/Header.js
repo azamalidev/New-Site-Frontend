@@ -168,11 +168,11 @@ const Header = () => {
                 >
                   Info Desk
                 </button>
-                <div className="absolute left-0 text-center rounded-md  hidden mt-0 w-28 bg-white border border-gray-300 shadow-md group-hover:block ">
-                  <h5 className=" py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">create Account?</h5>
-                  <h5 className=" py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">How to register cours?</h5>
-                  <h5 className=" py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">How to setup student LMS?</h5>
-                  <h5 className=" py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">News for you</h5>
+                <div className="absolute left-0  rounded-md  hidden mt-0 w-[210px] bg-white border border-gray-300 shadow-md group-hover:block ">
+                  <h5 className=" py-2 px-3 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Create Account?</h5>
+                  <h5 className=" py-2 px-3 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">How to register course?</h5>
+                  <h5 className=" py-2 px-3 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">How to setup student LMS?</h5>
+                  <h5 className=" py-2 px-3 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">News for you</h5>
                 </div>
               </div>
 
