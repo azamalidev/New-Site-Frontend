@@ -29,6 +29,7 @@ import CreateAccount from "./pages/CreateAccount";
 import RegisterCourse from "./pages/RegisterCourse";
 import SetupStudentsLMS from "./pages/SetupStudentsLMS";
 import NewsForYou from "./pages/NewsForYou";
+import UserDashboard from "./pages/UserDashboard";
 
 // Public Route Component
 const PublicRoute = ({ isAuthenticated, children }) => {
@@ -90,6 +91,7 @@ function App() {
         <Route path={routes.main} element={<HomePage />} />
         <Route path={routes.aboutUs} element={<AboutUs />} />
         <Route path={routes.support} element={<SupportPage />} />
+        <Route path={routes.dashboard} element={<UserDashboard />} />
 
         <Route
           path="/event-1"
