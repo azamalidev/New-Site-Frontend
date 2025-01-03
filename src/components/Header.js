@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ProfileIcon from '../assets/icons/profile';
 import BellIcon from '../assets/icons/bell';
 import { routes } from '../contant';
+import { LogOut, User } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 // import Logo from '../assets/image/Logo.png';
 // import { getProfile } from '../redux/action/auth';
@@ -317,26 +318,29 @@ const Header = () => {
       </div>
 
       {isOpen && (
-        <div className='absolute right-0 mt-[27vh] w-48 bg-white border rounded-lg shadow-lg z-50'>
-          <ul className='py-2'>
-            <li>
-              <Link
-                to={routes.profile}
-                className='block px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer'
-              >
-                Profile
-              </Link>
-            </li>
-            <li>
-              <button
-                onClick={logout}
-                className='w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer'
-              >
-                Logout
-              </button>
-            </li>
-          </ul>
+        <div className="absolute right-5 top-[70px] mt-2 w-36 bg-white border-2 border-gray-300  rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
+        <div className="absolute top-[-6px] right-4 w-4 h-4 bg-white border-t-2 border-l-2 border-gray-300 transform rotate-45"></div>
+
+    
+        <div className="py-1">
+         <Link  to={routes.profile}>
+          <a
+             
+            className="flex items-center px-4 mt-2 py-2 text-sm text-gray-700 hover:bg-blue-500 hover:text-white cursor-pointer"
+          >
+            <User size={18} className='hover:text-white'/>
+            <span className="ml-3">Profile</span>
+          </a> </Link>
+
+          <a
+            onClick={logout}
+            className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-blue-500 hover:text-white cursor-pointer"
+          >
+            <LogOut size={16} className='hover:text-white'/>
+            <span className="ml-3">Logout</span>
+          </a>
         </div>
+      </div>
       )}
     </header>
   );
