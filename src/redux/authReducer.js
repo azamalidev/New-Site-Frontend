@@ -2,7 +2,8 @@
 const GET_PROFILE_REQUEST = 'GET_PROFILE_REQUEST';
 const GET_PROFILE_SUCCESS = 'GET_PROFILE_SUCCESS';
 const GET_PROFILE_FAILURE = 'GET_PROFILE_FAILURE';
-const GET_EMPLOYEE_DATA = 'GET_EMPLOYEE_DATA';
+const GET_REDY_QUIZ = 'GET_REDY_QUIZ';
+const GET_REDY_QUIZ_RESULT = 'GET_REDY_QUIZ_RESULT';
 
 const GET_STATES_REQUEST = 'GET_STATES_REQUEST'; // New action type
 const GET_STATES_SUCCESS = 'GET_STATES_SUCCESS'; // New action type
@@ -19,7 +20,8 @@ const initialState = {
   pointsHistory: [],
   activityPoints: {},
   states: {},
-  employee: [],
+  quiz: [],
+  quizResult: {},
   profile: null,
   loading: false,
   error: '',
@@ -35,9 +37,10 @@ const authReducer = (state = initialState, action) => {
     case GET_PROFILE_SUCCESS:
       return { ...state, loading: false, profile: action.payload };
 
-    case GET_EMPLOYEE_DATA:
-      return { ...state, loading: false, employee: action.payload };
-
+    case GET_REDY_QUIZ:
+      return { ...state, loading: false, quiz: action.payload };
+    case GET_REDY_QUIZ_RESULT:
+      return { ...state, loading: false, quizResult: action.payload };
     case GET_PROFILE_FAILURE:
       return { ...state, loading: false, error: action.payload };
     // New cases for fetching states

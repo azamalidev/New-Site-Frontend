@@ -12,40 +12,39 @@ import { routes } from '../../contant';
 const GET_PROFILE_REQUEST = 'GET_PROFILE_REQUEST';
 const GET_PROFILE_SUCCESS = 'GET_PROFILE_SUCCESS';
 const GET_PROFILE_FAILURE = 'GET_PROFILE_FAILURE';
-const GET_EMPLOYEE_DATA = 'GET_EMPLOYEE_DATA';
+const GET_REDY_QUIZ = 'GET_REDY_QUIZ';
+const GET_REDY_QUIZ_RESULT = 'GET_REDY_QUIZ_RESULT';
+
 
 const API_BASE_URL = 'http://localhost:3000';
 
-export const sendSignupLink =
-  (email, userType = 'Student') =>
-  async (dispatch) => {
-    localStorage.setItem('userEmail', email);
-    try {
-      const response = await axios.post(`${API_BASE_URL}/users/varify-email`, {
-        email,
-        userType,
-      });
-      if (response) {
-        firebaseVarifyEmail(email);
-        toast.success(response?.data?.message || 'Verification email sent');
-      }
-      return response;
-    } catch (error) {
-      toast.error(error.message);
-      return error;
+export const completeProfile = (data) => async (dispatch) => {
+  const email = localStorage.getItem('registerMail');
+  try {
+    const response = await axios.post(`${API_BASE_URL}/users/profile-detail`, {
+      email,
+      ...data,
+    });
+    if (response) {
+      toast.success(
+        response?.data?.message || 'Congratulation your profile is setup now!'
+      );
     }
-  };
+    return response;
+  } catch (error) {
+    toast.error(error.message);
+    return error;
+  }
+};
 
-export const firebaseResetPasswordEmail =
-  (email) =>
-  async (dispatch) => {
-    try {
-      const userCredential = await sendPasswordResetEmail(auth, email);
-      return userCredential;
-    } catch (error) {
-      return error;
-    }
-  };
+export const firebaseResetPasswordEmail = (email) => async (dispatch) => {
+  try {
+    const userCredential = await sendPasswordResetEmail(auth, email);
+    return userCredential;
+  } catch (error) {
+    return error;
+  }
+};
 
 export const resetPassword = (password, navigate) => async (dispatch) => {
   try {
@@ -141,31 +140,37 @@ export const addAccount = (formData, navigate) => async (dispatch) => {
       formData
     );
     if (response) {
-      firebaseVarifyEmail(formData?.email)
+      firebaseVarifyEmail(formData?.email);
       toast.success(response?.data?.message || 'Account created successfully!');
-      setTimeout(() => {
-        navigate(routes.signin);
-      }, 2000);
     }
   } catch (error) {
-
     toast.error(error?.response?.data?.message);
     return error;
   }
 };
 
-export const getEmployee = () => async (dispatch) => {
+export const getReadyQuiz = () => async (dispatch) => {
   try {
-    const response = await axios.get(`${API_BASE_URL}/users/get-employees`);
-    dispatch({ type: GET_EMPLOYEE_DATA, payload: response?.data?.data });
+    const response = await axios.get(`${API_BASE_URL}/quiz/get-list?type=Entry Test`);
+    dispatch({ type: GET_REDY_QUIZ, payload: response?.data?.data });
     return response;
   } catch (error) {
     return error;
   }
 };
 
-
-
+export const getReadyMarks = (userAnswers) => async (dispatch) => {
+  try {
+    const response = await axios.post(
+      `${API_BASE_URL}/quiz/get-marks-ready?type=Entry Test`, // URL with query parameters
+      { userAnswers } // Send the userAnswers array in the body
+    );    
+    dispatch({ type: GET_REDY_QUIZ_RESULT, payload: response?.data?.data });
+    return response;
+  } catch (error) {
+    return error;
+  }
+};
 
 export const login = (formData, navigate) => async (dispatch) => {
   try {
