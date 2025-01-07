@@ -30,6 +30,7 @@ import RegisterCourse from "./pages/RegisterCourse";
 import SetupStudentsLMS from "./pages/SetupStudentsLMS";
 import NewsForYou from "./pages/NewsForYou";
 import UserDashboard from "./pages/UserDashboard";
+import CourseDetail from  './pages/CoursesDetail'
 
 // Public Route Component
 const PublicRoute = ({ isAuthenticated, children }) => {
@@ -181,10 +182,10 @@ function App() {
         <Route path={routes.resetPassword} element={<ResetPassword />} />
         <Route path="/verify" element={<Verify />} />
         <Route path="/" element={<Navigate to={routes.main} />} />
-        {/* <Route
-          path={routes.CourseSelection}
-          element={<CourseSelection />}
-        /> */}
+        <Route
+          path={routes.courseDetail}
+          element={<CourseDetail />}
+        />
         <Route path={routes.internship} element={<InternshipSection />} />
 
         <Route path={routes.scholarship} element={<ScholarshipProgram />} />

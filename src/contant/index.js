@@ -16,7 +16,8 @@ export const routes = {
   requestList:"/request-list",
   internship:"/internship",
   scholarship: "/scholarship",
-  course:'course',
-  dashboard: "/dashboard"
+  course:'/course',
+  dashboard: "/dashboard",
+  courseDetail:'/course-detail/:id'
 };
 

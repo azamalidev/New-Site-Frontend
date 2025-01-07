@@ -1,10 +1,6 @@
 // Import Dependencies
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import { routes } from '../../contant';
-
-const GET_PROFILE_REQUEST = 'GET_PROFILE_REQUEST';
-const GET_PROFILE_SUCCESS = 'GET_PROFILE_SUCCESS';
 const GET_STATES_REQUEST = 'GET_STATES_REQUEST';
 const GET_STATES_SUCCESS = 'GET_STATES_SUCCESS';
 
@@ -12,8 +8,8 @@ const GET_ACTIVITY_POINTS_SUCCESS = 'GET_POINST_SUCCESS';
 
 const GET_POINTS_HISTORY_SUCCESS = 'GET_POINST_HISTORY_SUCCESS';
 
-const GET_LEAD_SUCCESS = 'GET_MY_LEAD_SUCCESS';
-
+const GET_ALL_COURSE = 'GET_ALL_COURSE';
+const GET_COURSE_DETAIL = 'GET_COURSE_DETAIL';
 
 const API_BASE_URL = 'http://localhost:3000';
 
@@ -131,16 +127,15 @@ export const getMyActivityHistory = (userId, obj) => async (dispatch) => {
 };
 
 
-export const getMyLead = (userId) => async (dispatch) => {
+
+
+
+export const getCourse = () => async (dispatch) => {
   try {
     const token = localStorage.getItem('token'); 
-    const params = new URLSearchParams({
-      userId,
-    }).toString();
-
     let config = {
       method: 'get',
-      url: `http://localhost:3000/request/get-mine?${params}`,
+      url: `${API_BASE_URL}/course/list`,
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${token}`,
@@ -152,7 +147,7 @@ export const getMyLead = (userId) => async (dispatch) => {
     // Dispatch action if data is present
     if (response.data) {
       dispatch({
-        type: GET_LEAD_SUCCESS,
+        type: GET_ALL_COURSE,
         payload: response.data?.data,
       });
     }
@@ -165,6 +160,38 @@ export const getMyLead = (userId) => async (dispatch) => {
     return error;
   }
 };
+
+export const getCourseById = (id) => async (dispatch) => {
+  try {
+    const token = localStorage.getItem('token'); 
+    let config = {
+      method: 'get',
+      url: `${API_BASE_URL}/course/get-by-id?id=${id}`,
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+    };
+
+    // Execute Axios request
+    const response = await axios.request(config);
+    // Dispatch action if data is present
+    if (response.data) {
+      dispatch({
+        type: GET_COURSE_DETAIL,
+        payload: response.data?.data,
+      });
+    }
+
+    return response.data;
+  } catch (error) {
+    // Handle errors
+    console.error(error);
+    toast.error(error.response?.data?.message || error.message);
+    return error;
+  }
+};
+
 
 
 

@@ -12,11 +12,13 @@ const GET_STATES_FAILURE = 'GET_STATES_FAILURE'; // New action type
 const GET_ACTIVITY_POINTS_SUCCESS = 'GET_POINST_SUCCESS';
 const GET_POINTS_HISTORY_SUCCESS = 'GET_POINST_HISTORY_SUCCESS';
 
-const GET_LEAD_SUCCESS = 'GET_MY_LEAD_SUCCESS';
+const GET_ALL_COURSE = 'GET_ALL_COURSE';
+const GET_COURSE_DETAIL = 'GET_COURSE_DETAIL';
 
 // Initial state
 const initialState = {
-  leads: [],
+  course: [],
+  courseDetail: {},
   pointsHistory: [],
   activityPoints: {},
   states: {},
@@ -33,10 +35,10 @@ const authReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_PROFILE_REQUEST:
       return { ...state, loading: true, error: '' };
-
     case GET_PROFILE_SUCCESS:
       return { ...state, loading: false, profile: action.payload };
-
+    case GET_COURSE_DETAIL:
+      return { ...state, loading: false, courseDetail: action.payload };
     case GET_REDY_QUIZ:
       return { ...state, loading: false, quiz: action.payload };
     case GET_REDY_QUIZ_RESULT:
@@ -56,8 +58,8 @@ const authReducer = (state = initialState, action) => {
       return { ...state, loading: false, activityPoints: action.payload };
     case GET_POINTS_HISTORY_SUCCESS:
       return { ...state, loading: false, pointsHistory: action.payload };
-    case GET_LEAD_SUCCESS:
-      return { ...state, loading: false, leads: action.payload };
+    case GET_ALL_COURSE:
+      return { ...state, loading: false, course: action.payload };
     default:
       return state;
   }
