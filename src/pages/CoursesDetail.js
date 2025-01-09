@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getCourseById } from '../redux/action/request';
 import { useParams } from 'react-router-dom';
 import { Star, Clock, Globe, MoveUpIcon, GraduationCap, BadgeIcon } from 'lucide-react';
+
 export default function CourseDetail() {
   const dispatch = useDispatch();
   const { id } = useParams();
@@ -16,13 +17,15 @@ export default function CourseDetail() {
   return (
     <div>
       <Header />
+      
+   
       <section className="bg-gray-100 py-12">
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap -mx-4">
           <div className="w-full lg:w-3/4 px-4">
             <div className="bg-white rounded-lg shadow-md p-6 mb-6">
               <div className="mb-6">
-                <h4 className="text-2xl font-bold mb-4">Learn MERN Stack</h4>
+              <h5>{courseDetail?.title}</h5>
                 <div className="flex flex-wrap items-center gap-6 text-sm">
                   <div className="flex items-center">
                     <img src="/assets/images/logo1.png" alt="Instructor" className="w-12 h-12 rounded-full mr-3" />
@@ -33,7 +36,7 @@ export default function CourseDetail() {
                   </div>
                   <div>
                     <h6 className="font-semibold">Category</h6>
-                    <p className="text-gray-600">Website Development</p>
+                    <p className="text-gray-600">{courseDetail?.title}</p>
                   </div>
                   <div>
                     <h6 className="font-semibold">Rating</h6>
@@ -55,10 +58,10 @@ export default function CourseDetail() {
                 <img src="https://aws.pftpedu.org/storage/courses/detail/webimg6.jpg" alt="Course Banner" className="w-full rounded-lg" />
               </div>
               <div className="prose max-w-none">
-                <h2 className="text-3xl font-bold text-center mb-6">MERN Stack</h2>
+                <h2 className="text-3xl font-bold text-center mb-6">{courseDetail?.title}</h2>
                 <h3 className="text-2xl font-semibold mb-4">Welcome to PFTP, where the world connects.</h3>
                 <p className="mb-4">
-                  If you are looking forward to web development and want to do it within no time, then you are at the right place where you should be.
+                  If you are looking forward to {courseDetail?.title} and want to do it within no time, then you are at the right place where you should be.
                 </p>
                 <p className="mb-4">
                   MERN Stack enables efficient web development by combining 4 JS-based technologies into a comprehensive technology stack.
@@ -170,6 +173,7 @@ export default function CourseDetail() {
         </div>
       </div>
     </section>
+
       <Footer />
     </div>
   );
