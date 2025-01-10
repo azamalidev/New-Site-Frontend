@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getCourseById } from '../redux/action/request';
 import { useParams } from 'react-router-dom';
 import { Star, Clock, Globe, MoveUpIcon, GraduationCap, BadgeIcon } from 'lucide-react';
-
+import { Link } from 'react-router-dom';
 export default function CourseDetail() {
   const dispatch = useDispatch();
   const { id } = useParams();
@@ -134,9 +134,11 @@ export default function CourseDetail() {
                   <span className="ml-2">Yes</span>
                 </li>
               </ul>
-              <button className="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg mt-6 hover:bg-blue-700 transition duration-300">
-                Enroll Course
-              </button>
+              <Link to="/next-page">
+      <button className="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg mt-6 hover:bg-blue-700 transition duration-300">
+        Enroll Course
+      </button>
+    </Link>
             </div>
             <div className="bg-white rounded-lg shadow-md p-6 mb-6">
               <h5 className="text-xl font-bold mb-4">Related Course</h5>

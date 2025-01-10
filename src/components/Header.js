@@ -187,6 +187,7 @@ const Header = () => {
             News for you
           </h5>
         </Link>
+      
       </div>
     </div>
 

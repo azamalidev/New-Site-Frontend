@@ -31,6 +31,9 @@ import SetupStudentsLMS from "./pages/SetupStudentsLMS";
 import NewsForYou from "./pages/NewsForYou";
 import UserDashboard from "./pages/UserDashboard";
 import CourseDetail from  './pages/CoursesDetail'
+import { Layout } from "lucide-react";
+import CourseCart from "./pages/CourseeCart";
+
 
 // Public Route Component
 const PublicRoute = ({ isAuthenticated, children }) => {
@@ -193,6 +196,7 @@ function App() {
           path={routes.howtocreateaccount}
           element={<ScholarshipProgram />}
         />
+        <Route path="/next-page"  element={<CourseCart/>}/>
         <Route path="/created" element={<CreateAccount/>}/>
         <Route path="/register-course" element={<RegisterCourse/>}/>
         <Route path="/setup-lms" element={<SetupStudentsLMS/>}/>
