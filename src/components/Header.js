@@ -5,14 +5,14 @@ import { routes } from '../contant';
 import { LogOut, User } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 // import Logo from '../assets/image/Logo.png';
-// import { getProfile } from '../redux/action/auth';
+import { getProfile } from '../redux/action/auth';
 import { useDispatch, useSelector } from 'react-redux';
 
 const Header = () => {
   const navigate = useNavigate();
   const { profile } = useSelector((state) => state.auth);
-  // const dispatch = useDispatch();
-
+  const dispatch = useDispatch();
+ console.log(profile, "profile")
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -66,11 +66,11 @@ const Header = () => {
    
   };
 
-  // useEffect(() => {
-  //   if (isAuthenticated) {
-  //     dispatch(getProfile());
-  //   }
-  // }, [dispatch]);
+  useEffect(() => {
+    if (isAuthenticated) {
+      dispatch(getProfile());
+    }
+  }, [dispatch]);
 
   return (
     <header

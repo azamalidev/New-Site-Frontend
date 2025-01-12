@@ -16,7 +16,7 @@ const GET_REDY_QUIZ = 'GET_REDY_QUIZ';
 const GET_REDY_QUIZ_RESULT = 'GET_REDY_QUIZ_RESULT';
 
 
-const API_BASE_URL = 'http://localhost:3009';
+const API_BASE_URL = 'http://localhost:3000';
 
 export const completeProfile = (data) => async (dispatch) => {
   const email = localStorage.getItem('registerMail');
