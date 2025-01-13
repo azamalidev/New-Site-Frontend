@@ -52,9 +52,9 @@ const SignIn = () => {
   };
 
   const colors = [
-    'bg-gradient-to-r from-[#5A70E9] to-[#15B7A7]',
-    'bg-gradient-to-r from-[#367FB7] to-[#5F5C94]',
-    'bg-gradient-to-r from-[#15B7A7] to-[#5A70E9]',
+    'bg-gradient-to-r from-[#2aa266] to-[#1b5c4b]',
+    'bg-gradient-to-r from-[#2aa266] to-[#1b5c4b]',
+    'bg-gradient-to-r from-[#2aa266] to-[#1b5c4b]',
     'bg-gradient-to-r from-[#5F5C94] to-[#15B7A7]',
   ];
 

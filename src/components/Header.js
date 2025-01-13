@@ -79,11 +79,11 @@ const Header = () => {
         position: 'sticky',
         top: 0,
         zIndex: 999,
-        backgroundColor: 'white',
+        backgroundColor: '#2aa266',
         boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
        
       }}
-      className='flex justify-between items-center bg-white py-4 px-6 shadow-md'
+      className='flex justify-between items-center bg-red-700 py-4 px-6 shadow-md'
     >
      <h5> Logo</h5>
       <button
@@ -96,7 +96,7 @@ const Header = () => {
       {/* Navigation */}
       <nav
         className={`lg:flex ${isMenuOpen ? 'block' : 'hidden'
-          } absolute lg:static bg-white lg:bg-transparent w-full top-16 left-0 shadow-md lg:shadow-none xl:ml-[10%] xl:ml-[10%]`}
+          } absolute lg:static bg-red lg:bg-transparent w-full top-16 left-0 shadow-md lg:shadow-none xl:ml-[10%] xl:ml-[10%]`}
       >
         <ul className='flex flex-col lg:flex-row items-center space-y-4 lg:space-y-0 lg:space-x-6'>
 
