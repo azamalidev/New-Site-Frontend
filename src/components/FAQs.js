@@ -200,7 +200,7 @@ const FAQs = () => {
                             className="text-xl font-semibold text-gray-800 cursor-pointer mb-4"
                             onClick={() => toggleSection('internship')}
                         >
-                            5. Internship and Employment Opportunities
+                            4. Internship and Employment Opportunities
                         </h2>
                         {activeSection === 'internship' && (
                             <ul className="space-y-4">
@@ -248,7 +248,7 @@ const FAQs = () => {
                             className="text-xl font-semibold text-gray-800 cursor-pointer mb-4"
                             onClick={() => toggleSection('assanSchemes')}
                         >
-                            6. Assan Schemes
+                            5. Assan Schemes
                         </h2>
                         {activeSection === 'assanSchemes' && (
                             <ul className="space-y-4">
@@ -284,7 +284,7 @@ const FAQs = () => {
                             className="text-xl font-semibold text-gray-800 cursor-pointer mb-4"
                             onClick={() => toggleSection('contact')}
                         >
-                            4. Contact Us
+                            6. Contact Us
                         </h2>
                         {activeSection === 'contact' && (
                             <ul className="space-y-4">
