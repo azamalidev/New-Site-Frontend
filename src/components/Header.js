@@ -5,14 +5,14 @@ import { routes } from '../contant';
 import { LogOut, User } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 // import Logo from '../assets/image/Logo.png';
-// import { getProfile } from '../redux/action/auth';
+import { getProfile } from '../redux/action/auth';
 import { useDispatch, useSelector } from 'react-redux';
 
 const Header = () => {
   const navigate = useNavigate();
   const { profile } = useSelector((state) => state.auth);
-  // const dispatch = useDispatch();
-
+  const dispatch = useDispatch();
+ console.log(profile, "profile")
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -66,11 +66,11 @@ const Header = () => {
    
   };
 
-  // useEffect(() => {
-  //   if (isAuthenticated) {
-  //     dispatch(getProfile());
-  //   }
-  // }, [dispatch]);
+  useEffect(() => {
+    if (isAuthenticated) {
+      dispatch(getProfile());
+    }
+  }, [dispatch]);
 
   return (
     <header
@@ -79,11 +79,11 @@ const Header = () => {
         position: 'sticky',
         top: 0,
         zIndex: 999,
-        backgroundColor: 'white',
+        backgroundColor: '#2aa266',
         boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
        
       }}
-      className='flex justify-between items-center bg-white py-4 px-6 shadow-md'
+      className='flex justify-between items-center bg-red-700 py-4 px-6 shadow-md'
     >
      <h5> Logo</h5>
       <button
@@ -96,7 +96,7 @@ const Header = () => {
       {/* Navigation */}
       <nav
         className={`lg:flex ${isMenuOpen ? 'block' : 'hidden'
-          } absolute lg:static bg-white lg:bg-transparent w-full top-16 left-0 shadow-md lg:shadow-none xl:ml-[10%] xl:ml-[10%]`}
+          } absolute lg:static bg-red lg:bg-transparent w-full top-16 left-0 shadow-md lg:shadow-none xl:ml-[10%] xl:ml-[10%]`}
       >
         <ul className='flex flex-col lg:flex-row items-center space-y-4 lg:space-y-0 lg:space-x-6'>
 
@@ -187,6 +187,7 @@ const Header = () => {
             News for you
           </h5>
         </Link>
+      
       </div>
     </div>
 

@@ -10,6 +10,7 @@ const GET_POINTS_HISTORY_SUCCESS = 'GET_POINST_HISTORY_SUCCESS';
 
 const GET_ALL_COURSE = 'GET_ALL_COURSE';
 const GET_COURSE_DETAIL = 'GET_COURSE_DETAIL';
+const GET_MY_ADD_TO_CART = 'GET_MY_ADD_TO_CART';
 
 const API_BASE_URL = 'http://localhost:3000';
 
@@ -187,6 +188,94 @@ export const getCourseById = (id) => async (dispatch) => {
   } catch (error) {
     // Handle errors
     console.error(error);
+    toast.error(error.response?.data?.message || error.message);
+    return error;
+  }
+};
+
+export const getMyAddToCartCourse = (status) => async (dispatch) => {
+  try {
+    // status may be "Pending" or "Paid"
+    const token = localStorage.getItem('token'); 
+    const userId = localStorage.getItem('userId'); 
+    let config = {
+      method: 'get',
+      url: `${API_BASE_URL}/add-to-card/get-all?userId=${userId}&status=${status}`,
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+    };
+
+    // Execute Axios request
+    const response = await axios.request(config);
+    // Dispatch action if data is present
+    console.log(response.data, "response.data")
+    if (response.data) {
+      dispatch({
+        type: GET_MY_ADD_TO_CART,
+        payload: response.data?.data,
+      });
+    }
+
+    return response.data;
+  } catch (error) {
+    toast.error(error.response?.data?.message || error.message);
+    return error;
+  }
+};
+
+export const removeMyAllCourse = (data) => async (dispatch) => {
+  try {
+    const token = localStorage.getItem('token'); 
+    let config = {
+      method: 'delete',
+      url: `${API_BASE_URL}/add-to-card/delete`,
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+      data:data
+    };
+
+
+    const response = await axios.request(config);
+    // getMyAddToCartCourse('Pending')
+    if (response.data) {
+      toast.success(response?.data?.message || 'Course are removed from your cart');
+      // getMyAddToCartCourse('Pending')
+    }
+
+    return response.data;
+  } catch (error) {
+    toast.error(error.response?.data?.message || error.message);
+    return error;
+  }
+};
+
+
+export const enrollCourseNow = (data) => async (dispatch) => {
+  try {
+    const token = localStorage.getItem('token'); 
+    let config = {
+      method: 'post',
+      url: `${API_BASE_URL}/add-to-card/add`,
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+      data :data
+    };
+
+    const response = await axios.request(config);
+    console.log(response, "response")
+    if (response.data) {
+      toast.success(response?.data?.message);
+
+    }
+
+    return response.data;
+  } catch (error) {
     toast.error(error.response?.data?.message || error.message);
     return error;
   }

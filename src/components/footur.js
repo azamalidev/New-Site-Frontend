@@ -4,30 +4,8 @@ import { Facebook, Linkedin, Twitter, Instagram, Youtube, MapPin, Mail, Phone } 
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0B4619] text-white py-12">
-      {/* Newsletter Section */}
-      <div className="container mx-auto px-4 mb-12">
-        <div className="bg-[#0B4619] p-8 rounded-lg shadow-lg max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl text-center mb-6">
-            Get The Latest News & Updates On Your Box
-          </h2>
-          <div className="flex flex-col md:flex-row gap-4">
-            <input
-              type="text"
-              placeholder="Enter your Name"
-              className="flex-1 p-3 rounded text-gray-800"
-            />
-            <input
-              type="email"
-              placeholder="Enter your Email"
-              className="flex-1 p-3 rounded text-gray-800"
-            />
-            <button className="bg-[#FFA500] hover:bg-[#FF8C00] text-black font-semibold py-3 px-6 rounded">
-              SUBMIT
-            </button>
-          </div>
-        </div>
-      </div>
+    <footer className="bg-[#2aa266] text-white py-12">
+     
 
       {/* Main Footer Content */}
       <div className="container mx-auto px-4">
