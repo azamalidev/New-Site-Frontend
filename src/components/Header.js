@@ -320,7 +320,7 @@ const Header = () => {
 
       {isOpen && (
         <div className="absolute right-5 top-[70px] mt-2 w-36 bg-white border-2 border-gray-300  rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
-        <div className="absolute top-[-6px] right-4 w-4 h-4 bg-white border-t-2 border-l-2 border-gray-300 transform rotate-45"></div>
+        <div className="absolute top-[-9px] right-4 w-4 h-4 bg-white border-t-2 border-l-2 border-gray-300 transform rotate-45"></div>
 
     
         <div className="py-1">
