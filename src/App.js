@@ -33,6 +33,7 @@ import UserDashboard from "./pages/UserDashboard";
 import CourseDetail from  './pages/CoursesDetail'
 import { Layout } from "lucide-react";
 import CourseCart from "./pages/CourseeCart";
+import FAQs from "./components/FAQs";
 
 
 // Public Route Component
@@ -96,6 +97,7 @@ function App() {
         <Route path={routes.aboutUs} element={<AboutUs />} />
         <Route path={routes.support} element={<SupportPage />} />
         <Route path={routes.dashboard} element={<UserDashboard />} />
+        <Route path={routes.Faqs} element={<FAQs />} />
 
         <Route
           path="/event-1"

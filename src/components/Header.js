@@ -45,7 +45,9 @@ const Header = () => {
  const gotoAboutUs = ()=>{
   navigate(routes.aboutUs)
  }
-
+ const gotoFaqPages = ()=>{
+  navigate(routes.Faqs)
+ }
   const gotoOppertunity =(title)=>{
     if(title == "Scholarship"){
       navigate(routes.scholarship);
@@ -187,7 +189,7 @@ const Header = () => {
             News for you
           </h5>
         </Link>
-      
+       
       </div>
     </div>
 
@@ -253,7 +255,7 @@ const Header = () => {
                 </div>
               )}
             </li>
-
+           
           </ul>
 
            {isAuthenticated ? (
@@ -268,6 +270,12 @@ const Header = () => {
           ) : (
            ""
           )} 
+         <li className="relative group">
+              <button onClick={gotoFaqPages} className="text-gray-700 hover:text-black focus:outline-none">
+                FAQ's
+              </button>
+            </li>
+
         </ul>
       </nav>
 
