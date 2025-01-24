@@ -18,6 +18,7 @@ export const routes = {
   scholarship: "/scholarship",
   course:'/course',
   dashboard: "/dashboard",
-  courseDetail:'/course-detail/:id'
+  courseDetail:'/course-detail/:id',
+  Faqs:"/FAQs",
 };
 
