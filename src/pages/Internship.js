@@ -1,101 +1,152 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/footur';
+
 const InternshipSection = () => {
-  const [rollNumber, setRollNumber] = useState('');
-  const [message, setMessage] = useState('');
-
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    if (!rollNumber) {
-      setMessage('Please enter your roll number');
-      return;
-    }
-    setMessage('Application submitted successfully!');
-  };
-
   return (
     <>
-    <Header/>
-    <section className="message-area py-10 bg-gray-50">
-      <div className="container mx-auto">
-        <div className="row text-center mb-10">
-          <div className="col-md-12">
-            <img src="/assets/images/pftp-dark-logo.png" className="logo mb-4" alt="PFTP Logo" />
-            <h2 className="text-3xl font-semibold mb-4">VIRTUAL AND PHYSICAL INTERNSHIP</h2>
+      <Header />
+      <section className="py-12 bg-gradient-to-r from-blue-700 to-[rgba(180,42,185,0.94)] text-white">
+        <div className="container mx-auto">
+          <div className="text-center mb-10">
+            {/* <img
+              src="/assets/images/pftp-dark-logo.png"
+              className="logo mb-4 w-40 mx-auto"
+              alt="PFTP Logo"
+            /> */}
+            <h2 className="text-4xl font-extrabold text-yellow-100 leading-tight mb-4">
+              Internship Opportunities - Roshan Mustaqbil Hunarmand Program (RMHP)
+            </h2>
             <div className="hr-theme-slash-2 flex items-center justify-center mb-6">
-              <div className="hr-line w-1/4 h-0.5 bg-gray-400 mx-2"></div>
-              <div className="hr-icon text-lg font-medium">Work From Home Opportunity</div>
-              <div className="hr-line w-1/4 h-0.5 bg-gray-400 mx-2"></div>
+              <div className="hr-line w-1/4 h-1 bg-yellow-300 mx-2"></div>
+              <div className="hr-icon text-lg font-medium text-yellow-100 uppercase">Empowering the Next Generation</div>
+              <div className="hr-line w-1/4 h-1 bg-yellow-300 mx-2"></div>
             </div>
           </div>
-        </div>
 
-        <div className="col-md-12 mb-10">
-          <div className="message-content text-left text-lg leading-relaxed">
-            <p>
-              PFTP program has a vision to create job opportunities at the Government level and at the private sector level to enhance the employment ratio. Our Certified Students will be offered Paid/Unpaid Internship in their respective fields. After the completion of courses, qualified students will be offered internship on priority basis. Selection of candidate will remain the discretion of companies.
-            </p>
-            <p>
-              A stipend will be offered to the selected candidates and we are sure that our qualified students will get internships in Top Organizations, which may result in Permanent Job Offerings. Application is finally open for the PFTP Internship Program 2025. Candidates Male/Female from All over the country are eligible to apply for the PFTP Internship 2025.
-            </p>
-            <p>
-              The best thing about PFTP Internship is it’s virtual as well as physical so if you’re not willing to go to the office to attend the internship, you can attend it virtually as per your convenience. PFTP has decided to offer internships to help them earn an honorable living. This is the best chance for the students to get experience from the experts.
-            </p>
-            <p>
-              Candidates belonging to any part of the country can apply for this internship program. Students pursuing their Bachelors, Masters, or Ph.D. degree program can also apply for this Paid/Unpaid Internship. For further more details about the PFTP, Virtual & Physical Internship read the details mentioned below and apply.
-            </p>
-          </div>
-          <div className="note-section mt-6 bg-yellow-100 p-4 rounded-md">
-            <h3 className="font-bold">NOTE: Only PFTP enrolled students would be eligible for this Scholarship Program.</h3>
-          </div>
-
-          <div className="row mt-12">
-            <div className="col-md-12 text-center">
-              <h1 className="text-4xl font-bold">STEPS TO RESERVE YOUR INTERNSHIP</h1>
-            </div>
-            <div className="col-md-7 mt-8">
-              <ul className="list-disc pl-6 space-y-4 text-lg">
-                <li>First of All Register Yourself With Professional Freelancing Training Program (PFTP) To Become Eligible For Our Scholarship Program.</li>
-                <li>Now Fill Our Scholarship Form And Enter By Giving Your Registration Number Provided By Professional Freelancing Training Program.</li>
-                <li>After Providing Your Preferences Press The Submit Button And Wait For The Response "Congratulations You Are Now Considered As The Part of Our Scholarship Program."</li>
-                <li>Final Step Will Be Your competition / assessment Step Where You'll be short-listed for our Internationally fully / semi funded scholarship, Cash Prizes, Laptops, Tablets And Much More.</li>
+          <div className="space-y-12 text-lg text-gray-200">
+            {/* Program Overview */}
+            <div className="space-y-4">
+              <h3 className="text-2xl font-semibold text-yellow-300 text-opacity-80">1. Program Overview</h3>
+              <p>
+                The RMHP Internship Program is crafted to provide participants with real-world experience in their respective fields of study. This program aims to:
+              </p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Equip participants with industry-relevant skills.</li>
+                <li>Foster professional growth through mentorship and guidance.</li>
+                <li>Provide exposure to workplace dynamics and collaborative projects.</li>
+                <li>Strengthen resumes with practical achievements and certifications.</li>
               </ul>
             </div>
-            <div className="col-md-5 mt-8">
-              <img src="/assets/images/map-1.png" className="img-fluid" alt="Map" />
-            </div>
-          </div>
 
-          <div className="registration-box mt-12">
-            <div className="registration-title text-center mb-6">
-              <h3 className="text-3xl font-semibold">APPLY FOR INTERNSHIP</h3>
+            {/* Eligibility Criteria */}
+            <div className="space-y-4">
+              <h3 className="text-2xl font-semibold text-yellow-300 text-opacity-80">2. Eligibility Criteria</h3>
+              <p>
+                To apply for an internship under RMHP, applicants must meet the following criteria:
+              </p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Be an active participant in RMHP training programs or a recent graduate.</li>
+                <li>Demonstrate commitment, professionalism, and a willingness to learn.</li>
+                <li>Possess a basic understanding of the technical or vocational field they wish to pursue.</li>
+                <li>Meet any additional requirements specified by the partnering organization or project.</li>
+              </ul>
             </div>
-            <form className="form" onSubmit={handleFormSubmit}>
-              <div className="form-control mb-4">
-                <label htmlFor="roll_no" className="block text-lg font-medium">Roll Number</label>
-                <input
-                  type="text"
-                  id="roll_no"
-                  placeholder="Enter Roll Number"
-                  className="w-full p-3 border border-gray-300 rounded-md"
-                  value={rollNumber}
-                  onChange={(e) => setRollNumber(e.target.value)}
-                />
-                {message && <span className="text-red-500 text-sm">{message}</span>}
-              </div>
-              <button
-                type="submit"
-                className="w-full py-3 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 transition"
-              >
-                APPLY FOR INTERNSHIP PROGRAM 2025
-              </button>
-            </form>
+
+            {/* Internship Categories */}
+            <div className="space-y-4">
+              <h3 className="text-2xl font-semibold text-yellow-300 text-opacity-80">3. Internship Categories</h3>
+              <p>
+                RMHP offers internships across various disciplines, including but not limited to:
+              </p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Technical Skills: IT support, software development, web design, and cybersecurity.</li>
+                <li>Creative Fields: Graphic design, content writing, and digital marketing.</li>
+                <li>Administrative Roles: Office management, customer service, and data entry.</li>
+                <li>Entrepreneurial Projects: Hands-on experience in business operations and startups & much more.</li>
+              </ul>
+            </div>
+
+            {/* Program Duration */}
+            <div className="space-y-4">
+              <h3 className="text-2xl font-semibold text-yellow-300 text-opacity-80">4. Program Duration</h3>
+              <p>
+                Internships typically last between 1 to 3 months, depending on the nature of the project and the field of work. Flexible schedules may be offered to accommodate the needs of students or professionals in training.
+              </p>
+            </div>
+
+            {/* Benefits */}
+            <div className="space-y-4">
+              <h3 className="text-2xl font-semibold text-yellow-300 text-opacity-80">5. Benefits of the Internship</h3>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Practical Experience: Work on real projects to apply the skills learned during training.</li>
+                <li>Mentorship: Guidance from industry experts to refine technical and soft skills.</li>
+                <li>Networking Opportunities: Build connections with professionals and organizations in your field.</li>
+                <li>Certificate of Completion: Acknowledging your contributions and acquired expertise.</li>
+                <li>Stipends (where applicable): Certain internships may offer financial assistance.</li>
+              </ul>
+            </div>
+
+            {/* Application Process */}
+            <div className="space-y-4">
+              <h3 className="text-2xl font-semibold text-yellow-300 text-opacity-80">6. Application Process</h3>
+              <ul className="list-decimal pl-6 space-y-2">
+                <li>Submit an updated resume and cover letter highlighting your skills and interest.</li>
+                <li>Complete the RMHP Internship Application Form.</li>
+                <li>Attend an interview or assessment (if required).</li>
+                <li>Await selection and onboarding instructions from the RMHP team.</li>
+              </ul>
+            </div>
+
+            {/* Partnering Organizations */}
+            <div className="space-y-4">
+              <h3 className="text-2xl font-semibold text-yellow-300 text-opacity-80">7. Partnering Organizations</h3>
+              <p>
+                RMHP collaborates with leading companies, startups, and NGOs to provide internship placements. Our partners are committed to supporting skill development and empowering the next generation of professionals.
+              </p>
+            </div>
+
+            {/* Expectations from Interns */}
+            <div className="space-y-4">
+              <h3 className="text-2xl font-semibold text-yellow-300 text-opacity-80">8. Expectations from Interns</h3>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Adhere to the ethical and professional standards set by RMHP and the partnering organization.</li>
+                <li>Complete assigned tasks and responsibilities diligently.</li>
+                <li>Actively participate in team meetings and training sessions.</li>
+                <li>Provide regular progress updates to mentors or supervisors.</li>
+              </ul>
+            </div>
+
+            {/* Feedback and Evaluation */}
+            <div className="space-y-4">
+              <h3 className="text-2xl font-semibold text-yellow-300 text-opacity-80">9. Feedback and Evaluation</h3>
+              <p>
+                Interns will receive regular feedback from their mentors to help them improve their performance. At the end of the program, a comprehensive evaluation will be conducted, and constructive feedback will be shared.
+              </p>
+            </div>
+
+            {/* How to Get Started */}
+            <div className="space-y-4">
+              <h3 className="text-2xl font-semibold text-yellow-300 text-opacity-80">10. How to Get Started</h3>
+              <p>
+                To learn more about available internship opportunities or to apply, contact the RMHP Internship Coordinator at:
+              </p>
+              <ul className="list-none text-lg mt-2">
+                <li>
+                  <strong>Email:</strong> internships@rmhp.org
+                </li>
+                <li>
+                  <strong>Phone:</strong> +92-XXX-XXXXXXX
+                </li>
+                <li>
+                  <strong>Office Hours:</strong> Monday to Friday, 9:00 AM to 5:00 PM
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-      <Footer/>
-    </section>
+      </section>
+      <Footer />
     </>
   );
 };

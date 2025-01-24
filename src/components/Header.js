@@ -76,17 +76,17 @@ const Header = () => {
 
   return (
     <header
-      onMouseLeave={() => setIsOpen(false)}
-      style={{
-        position: 'sticky',
-        top: 0,
-        zIndex: 999,
-        backgroundColor: '#2aa266',
-        boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
-       
-      }}
-      className='flex justify-between items-center bg-red-700 py-4 px-6 shadow-md'
-    >
+  onMouseLeave={() => setIsOpen(false)}
+  style={{
+    position: 'sticky',
+    top: 0,
+    zIndex: 999,
+    backgroundColor: '#ADD8E6', // Light blue color
+    boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.1)', // Softer shadow for a clean, modern look
+    transition: 'background-color 0.3s ease, box-shadow 0.3s ease', // Smooth transition
+  }}
+  className="flex justify-between items-center py-4 px-6"
+>
      <h5> Logo</h5>
       <button
         className='lg:hidden text-gray-700 focus:outline-none'
@@ -104,11 +104,15 @@ const Header = () => {
 
           <ul className="flex space-x-4">
 
-            <li className="relative group">
-              <button onClick={gotoHomePage} className="text-gray-700 hover:text-black focus:outline-none">
-                Home
-              </button>
-            </li>
+          <li className="relative group">
+  <button 
+    onClick={gotoHomePage} 
+    className="text-gray-700 hover:text-black focus:outline-none">
+    Home
+  </button>
+  <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gray-700 group-hover:w-full transition-all duration-300"></span>
+</li>
+
 
 
 
@@ -122,6 +126,7 @@ const Header = () => {
               <button onClick={gotoAboutUs} className="text-gray-700 hover:text-black focus:outline-none">
                 About Us
               </button>
+              <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gray-700 group-hover:w-full transition-all duration-300"></span>
 
               {/* <ul
                 className="absolute left-0 mt-2 w-28 bg-white border border-gray-300 shadow-md transform transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:translate-y-0 opacity-0 -translate-y-4 rounded-lg"
@@ -143,6 +148,7 @@ const Header = () => {
                 >
                   Courses
                 </button>
+                <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gray-700 group-hover:w-full transition-all duration-300"></span>
                 <div className="absolute left-0 text-center rounded-md  hidden mt-0 w-28 bg-white border border-gray-300 shadow-md group-hover:block ">
                   <h5 onClick={()=> goToCourse("Online")} className=" py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Online</h5>
                   <h5  onClick={()=> goToCourse("Physical")} className=" py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Physical</h5>
@@ -158,6 +164,7 @@ const Header = () => {
               >
                 Opportunities
               </button>
+              <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gray-700 group-hover:w-full transition-all duration-300"></span>
               <div className="absolute left-0 text-center  hidden  w-28  bg-white border border-gray-300  rounded-md shadow-md group-hover:block ">
                 <h5 onClick={()=> {gotoOppertunity("Intership")}} className="py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Internship</h5> 
                 <h5 onClick={()=> {gotoOppertunity("Scholarship")}} className=" py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Scholarship</h5>
@@ -168,6 +175,7 @@ const Header = () => {
       <button className="text-gray-700 hover:text-black focus:outline-none">
         Info Desk
       </button>
+      <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gray-700 group-hover:w-full transition-all duration-300"></span>
       <div className="absolute left-0 rounded-md hidden mt-0 w-[210px] bg-white border border-gray-300 shadow-md group-hover:block">
         <Link to="/created" className='no-underline'>
           <h5 className="py-2 px-3 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">
@@ -201,6 +209,7 @@ const Header = () => {
                 >
                   Join Hands
                 </button>
+                <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gray-700 group-hover:w-full transition-all duration-300"></span>
                 <div className="absolute left-0 text-center rounded-md  hidden mt-0 w-28 bg-white border border-gray-300 shadow-md group-hover:block ">
                   <h5 className=" py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Submenu 1</h5>
                   <h5 className=" py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Submenu 2</h5>
@@ -215,7 +224,9 @@ const Header = () => {
                 className="text-gray-700 hover:text-black text-sm focus:outline-none"
               >
                 OUR EVENTS
+                
               </button>
+              
 
               {/* Dropdown */}
               {isDropdownOpen && (
@@ -262,7 +273,7 @@ const Header = () => {
             <li>
               <Link
                 to={routes.lms}
-                className='text-[#56D9B9] font-semibold hover:text-teal-600'
+                className='text-gray-700 hover:text-black focus:outline-none decoration-0'
               >
                 LMS
               </Link>
@@ -274,6 +285,7 @@ const Header = () => {
               <button onClick={gotoFaqPages} className="text-gray-700 hover:text-black focus:outline-none">
                 FAQ's
               </button>
+              <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gray-700 group-hover:w-full transition-all duration-300"></span>
             </li>
 
         </ul>
