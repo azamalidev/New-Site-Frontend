@@ -1,137 +1,135 @@
-import React, { useState } from "react";
-import Header from "../components/Header";
-import Footer from "../components/footur";
+import React from 'react';
+import Header from '../components/Header';
+import Footer from '../components/footur';
 
-const ScholarshipProgram = () => {
-  const [rollNo, setRollNo] = useState("");
-
-  const handleInputChange = (e) => {
-    setRollNo(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission logic here
-    console.log("Roll Number Submitted:", rollNo);
-  };
-
+const ScholarshipSection = () => {
   return (
     <>
-    <Header/>
-    <section className="message-area py-12">
-      <div className="container mx-auto">
-        <div className="row text-center mb-10">
-          <div className="w-full">
-            <img
-              src="/assets/images/pftp-dark-logo.png"
-              className="logo mx-auto"
-              alt="PFTP Logo"
-            />
-            <h2 className="text-3xl font-semibold mt-4">SCHOLARSHIP PROGRAMS</h2>
+      <Header />
+      <section className="py-12 bg-gradient-to-r from-blue-700 to-[rgba(180,42,185,0.94)] text-white">
+        <div className="container mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-4xl font-extrabold text-yellow-100 leading-tight mb-4">
+              Study Abroad Scholarship Opportunities - Roshan Mustaqbil Hunarmand Program (RMHP)
+            </h2>
             <div className="hr-theme-slash-2 flex items-center justify-center mt-6">
-              <div className="hr-line flex-grow h-px bg-gray-300"></div>
-              <div className="hr-icon mx-4">
-                <i className="fas fa-user-graduate fa-2x"></i>
+                <div className="hr-line flex-grow h-px bg-gray-300"></div>
+                <div className="hr-icon mx-4">
+                  <i className="fas fa-user-graduate fa-2x"></i>
+                </div>
+                <div className="hr-line flex-grow h-px bg-gray-300"></div>
               </div>
-              <div className="hr-line flex-grow h-px bg-gray-300"></div>
+            </div>
+          
+
+          <div className="space-y-12 text-lg text-gray-200">
+            {/* Program Objectives */}
+            <div className="space-y-4">
+              <h3 className="text-2xl font-semibold text-yellow-300 text-opacity-80">1. Program Objectives</h3>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Provide financial support for deserving students to study at world-class universities.</li>
+                <li>Facilitate access to quality education and advanced research opportunities.</li>
+                <li>Foster global exposure and intercultural exchange among participants.</li>
+                <li>Develop a pool of skilled professionals who can contribute to national development.</li>
+                <li>Strengthen participants' technical, academic, and leadership capabilities.</li>
+              </ul>
+            </div>
+
+            {/* Eligibility Criteria */}
+            <div className="space-y-4">
+              <h3 className="text-2xl font-semibold text-yellow-300 text-opacity-80">2. Eligibility Criteria</h3>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Be an active participant or graduate of RMHP training programs.</li>
+                <li>Have an excellent academic record with at least 80% marks or equivalent GPA.</li>
+                <li>Demonstrate strong leadership potential and commitment to community development.</li>
+                <li>Meet the admission requirements of the intended foreign university.</li>
+                <li>Provide proof of English language proficiency (e.g., IELTS, TOEFL, or equivalent).</li>
+                <li>Exhibit financial need or inability to fund studies independently.</li>
+              </ul>
+            </div>
+
+            {/* Scholarship Coverage */}
+            <div className="space-y-4">
+              <h3 className="text-2xl font-semibold text-yellow-300 text-opacity-80">3. Scholarship Coverage</h3>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Tuition Fees: Full or partial coverage of academic fees.</li>
+                <li>Living Expenses: Monthly stipend to cover accommodation, food, and other necessities.</li>
+                <li>Travel Costs: Round-trip airfare to the destination country.</li>
+                <li>Health Insurance: Coverage for medical and health-related expenses.</li>
+                <li>Books and Supplies: Allowance for academic materials and tools.</li>
+              </ul>
+            </div>
+
+            {/* Supported Fields of Study */}
+            <div className="space-y-4">
+              <h3 className="text-2xl font-semibold text-yellow-300 text-opacity-80">4. Supported Fields of Study</h3>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Engineering and Technology</li>
+                <li>Medicine and Health Sciences</li>
+                <li>Information Technology and Computer Science</li>
+                <li>Business Administration and Management</li>
+                <li>Renewable Energy and Environmental Studies</li>
+                <li>Vocational Education and Technical Skills</li>
+                <li>Arts, Humanities, and Social Sciences</li>
+              </ul>
+            </div>
+
+            {/* Application Process */}
+            <div className="space-y-4">
+              <h3 className="text-2xl font-semibold text-yellow-300 text-opacity-80">5. Application Process</h3>
+              <ul className="list-decimal pl-6 space-y-2">
+                <li>Submit an Application: Fill out the RMHP Study Abroad Scholarship Application Form available online or at RMHP offices.</li>
+                <li>Attach Required Documents: Include academic transcripts, personal statement, proof of English proficiency, etc.</li>
+                <li>Interview and Assessment: Shortlisted candidates will undergo an interview.</li>
+                <li>Approval Notification: Successful applicants will receive an official award letter.</li>
+              </ul>
+            </div>
+
+            {/* Obligations of Scholarship Recipients */}
+            <div className="space-y-4">
+              <h3 className="text-2xl font-semibold text-yellow-300 text-opacity-80">6. Obligations of Scholarship Recipients</h3>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Maintain excellent academic performance during their studies.</li>
+                <li>Act as ambassadors of RMHP and their country.</li>
+                <li>Return to Pakistan and contribute to local development for a specified period.</li>
+                <li>Comply with the terms and conditions outlined in the scholarship agreement.</li>
+              </ul>
+            </div>
+
+            {/* Benefits */}
+            <div className="space-y-4">
+              <h3 className="text-2xl font-semibold text-yellow-300 text-opacity-80">7. Benefits of the Scholarship</h3>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Global Exposure: Experience diverse cultures, ideas, and learning environments.</li>
+                <li>Career Advancement: Enhance career prospects with an internationally recognized degree.</li>
+                <li>Networking Opportunities: Build connections with global professionals.</li>
+                <li>Skill Development: Gain advanced knowledge and skills in cutting-edge fields.</li>
+                <li>Nation-Building: Contribute to Pakistan’s growth with the expertise gained.</li>
+              </ul>
+            </div>
+
+            {/* Contact Information */}
+            <div className="space-y-4">
+              <h3 className="text-2xl font-semibold text-yellow-300 text-opacity-80">8. Contact Information</h3>
+              <ul className="list-none text-lg mt-2">
+                <li><strong>Email:</strong> scholarships@rmhp.org</li>
+                <li><strong>Phone:</strong> +92-XXX-XXXXXXX</li>
+                <li><strong>Office Hours:</strong> Monday to Friday, 9:00 AM to 5:00 PM</li>
+              </ul>
+            </div>
+            <div className="hr-theme-slash-2 flex items-center text-center justify-center mb-6">
+              <div className="hr-line w-1/4 h-1 bg-yellow-300 mx-2"></div>
+              <div className="hr-icon text-lg font-medium text-yellow-100 uppercase">Empowering Talented Students</div>
+              <div className="hr-line w-1/4 h-1 bg-yellow-300 mx-2"></div>
             </div>
           </div>
+          
         </div>
-
-        <div className="message-content text-lg">
-          <p className="mb-4">
-            The Ministry of Information Technology & Telecommunication (MoITT)
-            has a vision to provide Freelancing Training to empower youth of the
-            nation. In order to bring this revolution (PFTP) Scholarship Program
-            2025 has been designed which provides opportunities to aspiring youth
-            across all provinces of Pakistan.
-          </p>
-          <p className="mb-4">
-            The priority of Government of Pakistan is to work on such programs
-            which give drive to provide access to financially deserving and also
-            encourages gender equity. Following this aim of Government, PFTP
-            Scholarship Program 2025 strategy is to create opportunities for a
-            sizeable segment of youth to bring them under the net of higher
-            education and create equal education opportunities for all and for
-            this our Scholarships comprises.
-          </p>
-          <ul className="list-disc ml-8 mb-4">
-            <li>
-              <b>Cash Prizes, Laptops, Tablets, etc.</b>
-            </li>
-            <li>
-              <b>Every PFTP enrolled student will get this opportunity Once
-                he/she completes his/her 3 months based freelancing and IT
-                courses</b>
-            </li>
-          </ul>
-          <p className="mb-4">
-            So if you want to avail this opportunity, follow the instructions
-            and steps given below to reserve your seat for this Scholarship
-            Program 2025 as Professional Freelancing Training Program (PFTP) has
-            limited seats.
-          </p>
-
-          <div className="note-section mb-8">
-            <h3 className="text-xl font-semibold">
-              NOTE: Only PFTP enrolled students would be eligible for this
-              Scholarship Program.
-            </h3>
-          </div>
-
-          <div className="steps-to-avail my-8">
-            <h1 className="text-3xl font-semibold mb-4">STEPS TO AVAIL YOUR SCHOLARSHIPS</h1>
-            <div className="flex">
-              <div className="w-7/12">
-                <ul className="list-decimal ml-8 space-y-3">
-                  <li>First of All Register Yourself With Professional Freelancing Training Program (PFTP) To Become Eligible For Our Scholarship Program.</li>
-                  <li>Now Fill Our Scholarship Form And Enter By Giving Your Registration Number Provided By Professional Freelancing Training Program.</li>
-                  <li>After Providing Your Preferences Press The Submit Button And Wait For The Response "Congratulations You Are Now Considered As The Part of Our Scholarship Program."</li>
-                  <li>Final Step Will Be Your competition / assessment Step Where You'll be short-listed for our Internationally fully / semi funded scholarship, Cash Prizes, Laptops, Tablets And Much More.</li>
-                </ul>
-              </div>
-              <div className="w-5/12">
-                <img
-                  src="/assets/images/map.png"
-                  className="img-fluid w-full"
-                  alt="Map"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div className="registration-box my-8">
-            <div className="registration-title text-center mb-4">
-              <h3 className="text-2xl font-semibold">APPLY FOR SCHOLARSHIP</h3>
-            </div>
-            <form onSubmit={handleSubmit} className="form space-y-4">
-              <div className="form-control">
-                <label htmlFor="roll_no" className="block text-sm font-medium">
-                  Roll Number
-                </label>
-                <input
-                  type="text"
-                  id="roll_no"
-                  placeholder="Enter Roll Number"
-                  value={rollNo}
-                  onChange={handleInputChange}
-                  className="input w-full px-4 py-2 border border-gray-300 rounded-md mt-2"
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full py-3 bg-blue-600 text-white text-xl rounded-md hover:bg-blue-700 transition-all"
-              >
-                APPLY FOR SCHOLARSHIP PROGRAM 2025
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-    <Footer/>
+        
+      </section>
+      <Footer />
     </>
   );
 };
 
-export default ScholarshipProgram;
+export default ScholarshipSection;
