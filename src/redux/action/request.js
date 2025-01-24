@@ -11,7 +11,7 @@ const GET_POINTS_HISTORY_SUCCESS = 'GET_POINST_HISTORY_SUCCESS';
 const GET_ALL_COURSE = 'GET_ALL_COURSE';
 const GET_COURSE_DETAIL = 'GET_COURSE_DETAIL';
 
-const API_BASE_URL = 'http://localhost:3009';
+const API_BASE_URL = 'http://localhost:3000';
 
 export const addRequest = (data) => async (dispatch) => {
   console.log(data, 'data');
