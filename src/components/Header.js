@@ -197,6 +197,23 @@ const Header = () => {
             News for you
           </h5>
         </Link>
+        <Link to="/SOPsPage" className='no-underline'>
+          <h5 className="py-2 px-3 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">
+            SOPS
+          </h5>
+        </Link>
+
+        <Link to="/TermsAndConditions" className='no-underline'>
+          <h5 className="py-2 px-3 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">
+            Terms & Conditions
+          </h5>
+        </Link>
+
+        <Link to="/PrivacyPolicy" className='no-underline'>
+          <h5 className="py-2 px-3 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">
+            Privacy Policy
+          </h5>
+        </Link>
        
       </div>
     </div>
@@ -210,9 +227,11 @@ const Header = () => {
                   Join Hands
                 </button>
                 <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gray-700 group-hover:w-full transition-all duration-300"></span>
-                <div className="absolute left-0 text-center rounded-md  hidden mt-0 w-28 bg-white border border-gray-300 shadow-md group-hover:block ">
-                  <h5 className=" py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Submenu 1</h5>
-                  <h5 className=" py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Submenu 2</h5>
+                <div className="absolute left-0 text-center rounded-md  hidden mt-0 w-32 bg-white border border-gray-300 shadow-md group-hover:block ">
+                  <Link to="/LaptopScheme" className='no-underline'>
+                  <h5  className=" py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Laptop Scheme</h5> </Link>
+                  <Link to="/SolarScheme" className='no-underline'>
+                  <h5 className=" py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Solar Scheme</h5></Link>
                 </div>
               </div>
             <li
