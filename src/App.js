@@ -34,6 +34,11 @@ import CourseDetail from  './pages/CoursesDetail'
 import { Layout } from "lucide-react";
 import CourseCart from "./pages/CourseeCart";
 import FAQs from "./components/FAQs";
+import SOPsPage from "./pages/SOPsPage";
+import TermsAndConditions from "./pages/TermsAndConditions";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import LaptopScheme from "./pages/LaptopScheme";
+import SolarScheme from "./pages/SolarScheme";
 
 
 // Public Route Component
@@ -98,6 +103,11 @@ function App() {
         <Route path={routes.support} element={<SupportPage />} />
         <Route path={routes.dashboard} element={<UserDashboard />} />
         <Route path={routes.Faqs} element={<FAQs />} />
+        <Route path={routes.SOPs} element={<SOPsPage />} />
+        <Route path={routes.TermsConditions} element={<TermsAndConditions />} />
+        <Route path={routes.PrivacyPolicy} element={<PrivacyPolicy />} />
+        <Route path={routes.LaptopScheme} element={<LaptopScheme />} />
+        <Route path={routes.SolarScheme} element={<SolarScheme />} />
 
         <Route
           path="/event-1"

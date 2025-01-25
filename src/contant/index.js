@@ -20,5 +20,10 @@ export const routes = {
   dashboard: "/dashboard",
   courseDetail:'/course-detail/:id',
   Faqs:"/FAQs",
+  SOPs: "/SOPsPage",
+  TermsConditions: "/TermsAndConditions",
+  PrivacyPolicy: "/PrivacyPolicy",
+  LaptopScheme: "/LaptopScheme",
+  SolarScheme: "/SolarScheme",
 };
 
