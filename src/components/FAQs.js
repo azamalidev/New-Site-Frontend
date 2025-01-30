@@ -14,7 +14,7 @@ const FAQs = () => {
             <Header />
             <div className="min-h-screen bg-gray-100 p-6">
                 <div className="max-w-5xl mx-auto bg-white shadow-lg rounded-lg p-8">
-                    <h1 className="text-3xl font-bold text-center text-blue-600 mb-8">
+                <h1 className="text-3xl font-bold text-center text-green-600 mb-8">
                         Frequently Asked Questions (FAQs)
                     </h1>
 

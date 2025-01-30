@@ -177,25 +177,26 @@ const Card2 = () => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full mb-8">
       {/* Navigation Bar */}
       <nav className="bg-white shadow-sm w-full mb-6">
         <div className="container mx-auto px-6 py-2 overflow-x-auto">
           <div className="flex space-x-4 whitespace-nowrap">
             {buttons.map((button) => (
-              <button
-                key={button.id}
-                onClick={() => handleButtonClick(button.id)}
-                className={`px-4 py-2 rounded-lg 
-                  ${
-                    activeButton === button.id
-                      ? "bg-blue-500 text-white hover:bg-blue-600"
-                      : "text-gray-700 hover:bg-gray-100"
-                  }
-                  focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-200`}
-              >
-                {button.label}
-              </button>
+             <button
+             key={button.id}
+             onClick={() => handleButtonClick(button.id)}
+             className={`px-4 py-2 rounded-lg 
+               ${
+                 activeButton === button.id
+                   ? "bg-green-700 text-white hover:bg-green-800"
+                   : "text-gray-700 hover:bg-green-100"
+               }
+               focus:outline-none focus:ring-2 focus:ring-green-400 transition duration-200`}
+           >
+             {button.label}
+           </button>
+           
             ))}
           </div>
         </div>
