@@ -6,20 +6,20 @@ const LaptopScheme = () => {
   return (
     <>
       <Header />
-      <section className="py-12 bg-gradient-to-r from-blue-700 to-[rgba(180,42,185,0.94)] text-white">
+      <section className="py-12 bg-white text-gray-800"> {/* Changed background to white and text color to dark gray */}
         <div className="container mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-4xl font-extrabold text-yellow-100 leading-tight mb-4">
+            <h2 className="text-4xl font-extrabold text-green-600 leading-tight mb-4"> {/* Adjusted green shade for main title */}
               Assan Laptop Scheme - Privacy Policy for RMHP (Roshan Mustaqbil Hunarmand Program)
             </h2>
             <div className="hr-theme-slash-2 flex items-center justify-center mb-6">
-              <div className="hr-line w-1/4 h-1 bg-yellow-300 mx-2"></div>
-              <div className="hr-icon text-lg font-medium text-yellow-100 uppercase">Securing Your Information</div>
-              <div className="hr-line w-1/4 h-1 bg-yellow-300 mx-2"></div>
+              <div className="hr-line w-1/4 h-1 bg-green-500 mx-2"></div> {/* Kept green for hr-line */}
+              <div className="hr-icon text-lg font-medium text-gray-700 uppercase">Securing Your Information</div> {/* Changed to gray for better contrast */}
+              <div className="hr-line w-1/4 h-1 bg-green-500 mx-2"></div> {/* Kept green for hr-line */}
             </div>
           </div>
 
-          <div className="space-y-12 text-lg text-gray-200">
+          <div className="space-y-12 text-lg text-gray-700"> {/* Changed text color to dark gray */}
             {/* Introduction */}
             <div className="space-y-4">
               <p>
@@ -29,7 +29,7 @@ const LaptopScheme = () => {
 
             {/* Program Objectives */}
             <div className="space-y-4">
-              <h3 className="text-2xl font-semibold text-yellow-300 text-opacity-80">1. Program Objectives</h3>
+              <h3 className="text-2xl font-semibold text-green-700">1. Program Objectives</h3> {/* Adjusted green for section titles */}
               <p>
                 The Assan Laptop Scheme seeks to:
               </p>
@@ -43,7 +43,7 @@ const LaptopScheme = () => {
 
             {/* Eligibility Criteria */}
             <div className="space-y-4">
-              <h3 className="text-2xl font-semibold text-yellow-300 text-opacity-80">2. Eligibility Criteria</h3>
+              <h3 className="text-2xl font-semibold text-green-700">2. Eligibility Criteria</h3> {/* Adjusted green for section titles */}
               <p>
                 Applicants must meet the following criteria to qualify for the Assan Laptop Scheme:
               </p>
@@ -63,7 +63,7 @@ const LaptopScheme = () => {
 
             {/* Features of the Scheme */}
             <div className="space-y-4">
-              <h3 className="text-2xl font-semibold text-yellow-300 text-opacity-80">3. Features of the Scheme</h3>
+              <h3 className="text-2xl font-semibold text-green-700">3. Features of the Scheme</h3> {/* Adjusted green for section titles */}
               <p>
                 The Assan Laptop Scheme offers:
               </p>
@@ -77,7 +77,7 @@ const LaptopScheme = () => {
 
             {/* Application Process */}
             <div className="space-y-4">
-              <h3 className="text-2xl font-semibold text-yellow-300 text-opacity-80">4. Application Process</h3>
+              <h3 className="text-2xl font-semibold text-green-700">4. Application Process</h3> {/* Adjusted green for section titles */}
               <p>
                 Participants interested in the Assan Laptop Scheme must follow these steps:
               </p>
@@ -92,7 +92,7 @@ const LaptopScheme = () => {
 
             {/* Benefits of the Scheme */}
             <div className="space-y-4">
-              <h3 className="text-2xl font-semibold text-yellow-300 text-opacity-80">5. Benefits of the Assan Laptop Scheme</h3>
+              <h3 className="text-2xl font-semibold text-green-700">5. Benefits of the Assan Laptop Scheme</h3> {/* Adjusted green for section titles */}
               <p>
                 The Assan Laptop Scheme aims to:
               </p>
@@ -106,7 +106,7 @@ const LaptopScheme = () => {
 
             {/* Terms and Conditions */}
             <div className="space-y-4">
-              <h3 className="text-2xl font-semibold text-yellow-300 text-opacity-80">6. Terms and Conditions</h3>
+              <h3 className="text-2xl font-semibold text-green-700">6. Terms and Conditions</h3> {/* Adjusted green for section titles */}
               <ul className="list-disc pl-6 space-y-2">
                 <li>Laptops provided under the scheme are non-transferable and intended solely for the beneficiary’s use.</li>
                 <li>Participants must agree to the terms outlined in the Laptop Scheme Agreement Form.</li>
@@ -117,7 +117,7 @@ const LaptopScheme = () => {
 
             {/* Contact Information */}
             <div className="space-y-4">
-              <h3 className="text-2xl font-semibold text-yellow-300 text-opacity-80">7. Contact Information</h3>
+              <h3 className="text-2xl font-semibold text-green-700">7. Contact Information</h3> {/* Adjusted green for section titles */}
               <p>
                 For more details about the Assan Laptop Scheme, reach out to:
               </p>

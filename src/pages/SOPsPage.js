@@ -6,23 +6,23 @@ const SOPsPage = () => {
   return (
     <>
       <Header />
-      <section className="py-12 bg-gradient-to-r from-blue-700 to-[rgba(180,42,185,0.94)] text-white">
+      <section className="py-12 bg-white text-gray-800"> {/* Changed background to white and text color to dark gray */}
         <div className="container mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-4xl font-extrabold text-yellow-100 leading-tight mb-4">
+            <h2 className="text-4xl font-extrabold text-green-600 leading-tight mb-4"> {/* Adjusted green shade for main title */}
               Standard Operating Procedures (SOPs) - Roshan Mustaqbil Hunarmand Program (RMHP)
             </h2>
             <div className="hr-theme-slash-2 flex items-center justify-center mb-6">
-              <div className="hr-line w-1/4 h-1 bg-yellow-300 mx-2"></div>
-              <div className="hr-icon text-lg font-medium text-yellow-100 uppercase">Ensuring Excellence and Compliance</div>
-              <div className="hr-line w-1/4 h-1 bg-yellow-300 mx-2"></div>
+              <div className="hr-line w-1/4 h-1 bg-green-500 mx-2"></div> {/* Kept green for hr-line */}
+              <div className="hr-icon text-lg font-medium text-gray-700 uppercase">Ensuring Excellence and Compliance</div> {/* Changed to gray for better contrast */}
+              <div className="hr-line w-1/4 h-1 bg-green-500 mx-2"></div> {/* Kept green for hr-line */}
             </div>
           </div>
 
-          <div className="space-y-12 text-lg text-gray-200">
+          <div className="space-y-12 text-lg text-gray-700"> {/* Changed text color to dark gray */}
             {/* Communication Guidelines */}
             <div className="space-y-4">
-              <h3 className="text-2xl font-semibold text-yellow-300 text-opacity-80">1. Communication Guidelines</h3>
+              <h3 className="text-2xl font-semibold text-green-700">1. Communication Guidelines</h3> {/* Adjusted green for section titles */}
               <ul className="list-disc pl-6 space-y-2">
                 <li>Communication is strictly limited to course-related discussions with management and trainers via text.</li>
                 <li>Personal chats, especially with female members, are strictly prohibited. Violation of this rule may lead to legal action and cancellation of enrollment.</li>
@@ -34,7 +34,7 @@ const SOPsPage = () => {
 
             {/* Course-Related Discussions */}
             <div className="space-y-4">
-              <h3 className="text-2xl font-semibold text-yellow-300 text-opacity-80">2. Course-Related Discussions</h3>
+              <h3 className="text-2xl font-semibold text-green-700">2. Course-Related Discussions</h3> {/* Adjusted green for section titles */}
               <ul className="list-disc pl-6 space-y-2">
                 <li>Discussions in group chats must be limited to course-related topics only during the course duration.</li>
                 <li>Students can raise queries about LMS, quizzes, assignments, projects, and certificates. Only authorized persons may respond.</li>
@@ -44,7 +44,7 @@ const SOPsPage = () => {
 
             {/* Code of Conduct */}
             <div className="space-y-4">
-              <h3 className="text-2xl font-semibold text-yellow-300 text-opacity-80">3. Code of Conduct</h3>
+              <h3 className="text-2xl font-semibold text-green-700">3. Code of Conduct</h3> {/* Adjusted green for section titles */}
               <ul className="list-disc pl-6 space-y-2">
                 <li>Usage of unethical, offensive, or inappropriate language is strictly prohibited. Any violations will result in legal action without prior warning.</li>
                 <li>Students must adhere to all program rules and regulations. Non-compliance may result in penalties or fines.</li>
@@ -53,7 +53,7 @@ const SOPsPage = () => {
 
             {/* Intellectual Property and Confidentiality */}
             <div className="space-y-4">
-              <h3 className="text-2xl font-semibold text-yellow-300 text-opacity-80">4. Intellectual Property and Confidentiality</h3>
+              <h3 className="text-2xl font-semibold text-green-700">4. Intellectual Property and Confidentiality</h3> {/* Adjusted green for section titles */}
               <ul className="list-disc pl-6 space-y-2">
                 <li>RMHP lectures, materials, and resources are strictly for enrolled students. Unauthorized use, sharing, or reproduction of these materials is prohibited.</li>
                 <li>Students found guilty of unlawful activities, including misuse of RMHP materials, may be fined a minimum of Rs. 10 Lacs.</li>
@@ -62,7 +62,7 @@ const SOPsPage = () => {
 
             {/* Policy Updates and Compliance */}
             <div className="space-y-4">
-              <h3 className="text-2xl font-semibold text-yellow-300 text-opacity-80">5. Policy Updates and Compliance</h3>
+              <h3 className="text-2xl font-semibold text-green-700">5. Policy Updates and Compliance</h3> {/* Adjusted green for section titles */}
               <ul className="list-disc pl-6 space-y-2">
                 <li>RMHP management reserves the right to modify or update policies, terms, and conditions at any time. Students are required to comply with these changes.</li>
                 <li>Students are advised to review updates shared by the management regularly.</li>
@@ -71,7 +71,7 @@ const SOPsPage = () => {
 
             {/* Penalties for Non-Compliance */}
             <div className="space-y-4">
-              <h3 className="text-2xl font-semibold text-yellow-300 text-opacity-80">6. Penalties for Non-Compliance</h3>
+              <h3 className="text-2xl font-semibold text-green-700">6. Penalties for Non-Compliance</h3> {/* Adjusted green for section titles */}
               <ul className="list-disc pl-6 space-y-2">
                 <li>Violating any rules, including unethical behavior, spamming, or unauthorized communication, may result in fines or removal from the course.</li>
                 <li>The management has full authority to impose penalties as deemed necessary.</li>
@@ -80,7 +80,7 @@ const SOPsPage = () => {
 
             {/* Agreement to SOPs */}
             <div className="space-y-4">
-              <h3 className="text-2xl font-semibold text-yellow-300 text-opacity-80">7. Agreement to SOPs</h3>
+              <h3 className="text-2xl font-semibold text-green-700">7. Agreement to SOPs</h3> {/* Adjusted green for section titles */}
               <p>
                 Only students who agree to abide by these SOPs will be added to the relevant course groups.
               </p>

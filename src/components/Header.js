@@ -12,7 +12,7 @@ const Header = () => {
   const navigate = useNavigate();
   const { profile } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
- console.log(profile, "profile")
+  console.log(profile, "profile")
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -38,34 +38,34 @@ const Header = () => {
   const goToCourses = () => {
     // navigate(routes.);
   };
- const gotoHomePage = () =>{
-  navigate(routes.main);
- }
+  const gotoHomePage = () => {
+    navigate(routes.main);
+  }
 
- const gotoAboutUs = ()=>{
-  navigate(routes.aboutUs)
- }
- const gotoFaqPages = ()=>{
-  navigate(routes.Faqs)
- }
-  const gotoOppertunity =(title)=>{
-    if(title == "Scholarship"){
+  const gotoAboutUs = () => {
+    navigate(routes.aboutUs)
+  }
+  const gotoFaqPages = () => {
+    navigate(routes.Faqs)
+  }
+  const gotoOppertunity = (title) => {
+    if (title == "Scholarship") {
       navigate(routes.scholarship);
     }
-    else if(title == "Intership") {
+    else if (title == "Intership") {
       navigate(routes.internship);
     }
   }
 
   const goToCourse = (page) => {
-    if(page == 'Online'){
+    if (page == 'Online') {
       navigate(routes.course);
 
-    }if(page=='Physical'){
+    } if (page == 'Physical') {
       navigate(routes.course);
 
     }
-   
+
   };
 
   useEffect(() => {
@@ -76,18 +76,18 @@ const Header = () => {
 
   return (
     <header
-  onMouseLeave={() => setIsOpen(false)}
-  style={{
-    position: 'sticky',
-    top: 0,
-    zIndex: 999,
-    backgroundColor: '#ADD8E6', // Light blue color
-    boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.1)', // Softer shadow for a clean, modern look
-    transition: 'background-color 0.3s ease, box-shadow 0.3s ease', // Smooth transition
-  }}
-  className="flex justify-between items-center py-4 px-6"
->
-     <h5> Logo</h5>
+      onMouseLeave={() => setIsOpen(false)}
+      style={{
+        position: 'sticky',
+        top: 0,
+        zIndex: 999,
+        backgroundColor: '#166534',
+        boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.1)', // Softer shadow for a clean, modern look
+        transition: 'background-color 0.3s ease, box-shadow 0.3s ease', // Smooth transition
+      }}
+      className="flex justify-between items-center py-2 px-6"
+    >
+      <h5 className='text-white'> Logo</h5>
       <button
         className='lg:hidden text-gray-700 focus:outline-none'
         onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -97,61 +97,49 @@ const Header = () => {
 
       {/* Navigation */}
       <nav
-        className={`lg:flex ${isMenuOpen ? 'block' : 'hidden'
-          } absolute lg:static bg-red lg:bg-transparent w-full top-16 left-0 shadow-md lg:shadow-none xl:ml-[10%] xl:ml-[10%]`}
+        className={`lg:flex ${isMenuOpen ? 'block' : 'hidden'} absolute lg:static bg-red lg:bg-transparent w-full top-18  text-white left-0 shadow-md lg:shadow-none xl:ml-[10%] xl:mr-[10%] justify-center items-center`}
       >
-        <ul className='flex flex-col lg:flex-row items-center space-y-4 lg:space-y-0 lg:space-x-6'>
+
+
+        <ul className='flex flex-col lg:flex-row items-center mt-3   space-y-4 lg:space-y-0 lg:space-x-6'>
 
           <ul className="flex space-x-4">
 
-          <li className="relative group">
-  <button 
-    onClick={gotoHomePage} 
-    className="text-gray-700 hover:text-black focus:outline-none">
-    Home
-  </button>
-  <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gray-700 group-hover:w-full transition-all duration-300"></span>
-</li>
-
-
-
-
-
-
+            <li className="relative group">
+              <button
+                onClick={gotoHomePage}
+                className="text-white transition-colors duration-300 hover:text-amber-300 focus:outline-none">
+                Home
+              </button>
+              <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-amber-300 group-hover:w-full transition-all duration-300"></span>
+            </li>
 
 
 
             <div className="relative group">
-            
-              <button onClick={gotoAboutUs} className="text-gray-700 hover:text-black focus:outline-none">
+
+              <button onClick={gotoAboutUs} className="text-white  focus:outline-none">
                 About Us
               </button>
-              <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gray-700 group-hover:w-full transition-all duration-300"></span>
-
-              {/* <ul
-                className="absolute left-0 mt-2 w-28 bg-white border border-gray-300 shadow-md transform transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:translate-y-0 opacity-0 -translate-y-4 rounded-lg"
-              >
-
-                <div
-                  className="absolute -top-3 right-3 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[8px] border-b-white"></div>
-
-                <li className="px-4 py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer"> Submenu 1 </li>
-                <li className="px-4 py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Submenu 2</li>
-              </ul> */}
+              <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-amber-300 group-hover:w-full transition-all duration-300"></span>
             </div>
 
             {isAuthenticated && (
               <div className="relative group">
                 <button
 
-                  className="text-gray-700 hover:text-black focus:outline-none"
+                  className="text-white hover:text-black focus:outline-none"
                 >
                   Courses
                 </button>
-                <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gray-700 group-hover:w-full transition-all duration-300"></span>
-                <div className="absolute left-0 text-center rounded-md  hidden mt-0 w-28 bg-white border border-gray-300 shadow-md group-hover:block ">
-                  <h5 onClick={()=> goToCourse("Online")} className=" py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Online</h5>
-                  <h5  onClick={()=> goToCourse("Physical")} className=" py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Physical</h5>
+
+                <div className="absolute  left-0 text-center rounded-md hidden w-28 h-fit bg-[#2AA166] border-2 border-teal-500 shadow-md group-hover:block">
+                  <h5 onClick={() => goToCourse("Online")} className="py-2 text-sm hover:bg-[#166534] hover:rounded-md cursor-pointer m-0">
+                    Online
+                  </h5>
+                  <h5 onClick={() => goToCourse("Physical")} className="py-2 text-sm hover:bg-[#166534] hover:rounded-md cursor-pointer m-0">
+                    Physical
+                  </h5>
                 </div>
               </div>
 
@@ -160,124 +148,119 @@ const Header = () => {
             <div className="relative group">
               <button
 
-                className="text-gray-700 hover:text-black focus:outline-none"
+                className="text-white hover:text-black focus:outline-none"
               >
                 Opportunities
               </button>
-              <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gray-700 group-hover:w-full transition-all duration-300"></span>
-              <div className="absolute left-0 text-center  hidden  w-28  bg-white border border-gray-300  rounded-md shadow-md group-hover:block ">
-                <h5 onClick={()=> {gotoOppertunity("Intership")}} className="py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Internship</h5> 
-                <h5 onClick={()=> {gotoOppertunity("Scholarship")}} className=" py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Scholarship</h5>
+              <div className=" absolute left-0 text-center  hidden  w-28  bg-[#2AA166] border-2 border-teal-500 rounded-md shadow-md group-hover:block ">
+                <h5 onClick={() => { gotoOppertunity("Intership") }} className="py-2 text-sm hover:bg-[#166534] hover:rounded-md cursor-pointer m-0">Internship</h5>
+                <h5 onClick={() => { gotoOppertunity("Scholarship") }} className=" py-2 text-sm hover:bg-[#166534] hover:rounded-md cursor-pointer m-0">Scholarship</h5>
               </div>
             </div>
 
             <div className="relative group">
-      <button className="text-gray-700 hover:text-black focus:outline-none">
-        Info Desk
-      </button>
-      <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gray-700 group-hover:w-full transition-all duration-300"></span>
-      <div className="absolute left-0 rounded-md hidden mt-0 w-[210px] bg-white border border-gray-300 shadow-md group-hover:block">
-        <Link to="/created" className='no-underline'>
-          <h5 className="py-2 px-3 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">
-            Create Account?
-          </h5>
-        </Link>
-        <Link to="/register-course"className='no-underline'>
-          <h5 className="py-2 px-3 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">
-            How to register course?
-          </h5>
-        </Link>
-        <Link to="/setup-lms"className='no-underline'>
-          <h5 className="py-2 px-3 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer no-underline">
-            How to setup student LMS?
-          </h5>
-        </Link>
-        <Link to="/news" className='no-underline'>
-          <h5 className="py-2 px-3 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">
-            News for you
-          </h5>
-        </Link>
-        <Link to="/SOPsPage" className='no-underline'>
-          <h5 className="py-2 px-3 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">
-            SOPS
-          </h5>
-        </Link>
+              <button className="text-white hover:text-black focus:outline-none">
+                Info Desk
+              </button>
+              <div className="absolute left-0 rounded-md hidden text-white mt-0 w-[215px] bg-[#2AA166] border-2 border-teal-500 shadow-md group-hover:block">
+                <Link to="/created" className='no-underline'>
+                  <h5 className="py-2 px-3 text-sm  text-white hover:bg-[#166534] hover:rounded-md cursor-pointer m-0">
+                    Create Account?
+                  </h5>
+                </Link>
+                <Link to="/register-course" className='no-underline'>
+                  <h5 className="py-2 px-3 text-sm text-white hover:bg-[#166534] hover:rounded-md cursor-pointer m-0">
+                    How to register course?
+                  </h5>
+                </Link>
+                <Link to="/setup-lms" className='no-underline'>
+                  <h5 className="py-2 px-3 text-sm text-white hover:bg-[#166534] hover:rounded-md cursor-pointer m-0">
+                    How to setup student LMS?
+                  </h5>
+                </Link>
+               
+                <Link to="/SOPsPage" className='no-underline'>
+                  <h5 className="py-2 px-3 text-sm text-white hover:bg-[#166534] hover:rounded-md cursor-pointer m-0">
+                    SOPS
+                  </h5>
+                </Link>
 
-        <Link to="/TermsAndConditions" className='no-underline'>
-          <h5 className="py-2 px-3 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">
-            Terms & Conditions
-          </h5>
-        </Link>
+                <Link to="/TermsAndConditions" className='no-underline'>
+                  <h5 className="py-2 px-3 text-sm text-white hover:bg-[#166534] hover:rounded-md cursor-pointer m-0">
+                    Terms & Conditions
+                  </h5>
+                </Link>
 
-        <Link to="/PrivacyPolicy" className='no-underline'>
-          <h5 className="py-2 px-3 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">
-            Privacy Policy
-          </h5>
-        </Link>
-       
-      </div>
-    </div>
+                <Link to="/PrivacyPolicy" className='no-underline'>
+                  <h5 className="py-2 px-3 text-sm text-white hover:bg-[#166534] hover:rounded-md cursor-pointer m-0">
+                    Privacy Policy
+                  </h5>
+                </Link>
+
+              </div>
+            </div>
 
 
             <div className="relative group">
-                <button
+              <button
 
-                  className="text-gray-700 hover:text-black focus:outline-none"
-                >
-                  Join Hands
-                </button>
-                <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gray-700 group-hover:w-full transition-all duration-300"></span>
-                <div className="absolute left-0 text-center rounded-md  hidden mt-0 w-32 bg-white border border-gray-300 shadow-md group-hover:block ">
-                  <Link to="/LaptopScheme" className='no-underline'>
-                  <h5  className=" py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Laptop Scheme</h5> </Link>
-                  <Link to="/SolarScheme" className='no-underline'>
-                  <h5 className=" py-2 text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer">Solar Scheme</h5></Link>
-                </div>
+                className="text-white hover:text-black focus:outline-none"
+              >
+                Join Hands
+              </button>
+              <div className="absolute left-0 text-center rounded-md  hidden mt-0 w-32  bg-[#2AA166] border-2 border-teal-500 shadow-md group-hover:block ">
+                <Link to="/SolarScheme" className='no-underline'>
+                  <h5 className=" py-2 text-sm text-white hover:bg-[#166534] hover:rounded-md cursor-pointer m-0">Solar Scheme</h5> </Link>
+                <Link  to="/LaptopScheme" className='no-underline'>
+                  <h5 className=" py-2 text-sm text-white hover:bg-[#166534] hover:rounded-md cursor-pointer m-0">Laptop Scheme</h5></Link>
               </div>
+            </div>
             <li
-              className="relative"
+              className="relative group"
               onMouseEnter={() => setIsDropdownOpen(true)}
               onMouseLeave={() => setIsDropdownOpen(false)}
             >
               <button
-                className="text-gray-700 hover:text-black text-sm focus:outline-none"
+                className="text-white hover:text-black text-sm focus:outline-none"
               >
                 OUR EVENTS
-                
+
               </button>
               
 
+
               {/* Dropdown */}
               {isDropdownOpen && (
-                <div className="absolute top-full left-0 bg-white shadow-lg border rounded-md w-32">
-                  <h5>
+               <div className="absolute top-full left-0 bg-[#2AA166] border-2 border-teal-500 shadow-lg rounded-md w-32">
+
+                  <h5 className='m-0'>
                     <button
                       onClick={() => navigate('/event-1')}
-                      className=" py-2 w-full text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer"
+                      className=" py-2 w-full text-sm text-white hover:bg-[#166534] hover:rounded-md cursor-pointer m-0"
                     >
                       Event 1
                     </button>
                   </h5>
-                  <h5>
+                  <h5 className='m-0'>
                     <button
                       onClick={() => navigate('/event-2')}
-                      className=" py-2 w-full text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer"
+                      className=" py-2 w-full text-sm text-white hover:bg-[#166534] hover:rounded-md cursor-pointer m-0"
                     >
                       Event 2
                     </button>
                   </h5>
-                  <h5>
+                  <h5 className='m-0'>
                     <button
                       onClick={() => navigate('/event-3')}
-                     className=" py-2 w-full text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer"
+                      className=" py-2 w-full text-sm text-white hover:bg-[#166534] hover:rounded-md cursor-pointer m-0"
                     >
                       Event 3
                     </button>
                   </h5>
-                  <h5>
+                  <h5 className='m-0'>
                     <button
                       onClick={() => navigate('/event-4')}
-                      className=" py-2 w-full text-sm hover:bg-blue-500 hover:text-white hover:rounded-md cursor-pointer"
+                      className=" py-2 w-full text-sm text-white hover:bg-[#166534] hover:rounded-md cursor-pointer m-0"
                     >
                       Event 4
                     </button>
@@ -285,27 +268,28 @@ const Header = () => {
                 </div>
               )}
             </li>
-           
+
           </ul>
 
-           {isAuthenticated ? (
-            <li>
+          {isAuthenticated ? (
+            <li className="relative group">
               <Link
                 to={routes.lms}
-                className='text-gray-700 hover:text-black focus:outline-none decoration-0'
-              >
+                className="text-white font-bold hover:text-black no-underline">
                 LMS
               </Link>
+              <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-amber-300 group-hover:w-full transition-all duration-300"></span>
             </li>
+
           ) : (
-           ""
-          )} 
-         <li className="relative group">
-              <button onClick={gotoFaqPages} className="text-gray-700 hover:text-black focus:outline-none">
-                FAQ's
-              </button>
-              <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gray-700 group-hover:w-full transition-all duration-300"></span>
-            </li>
+            ""
+          )}
+          <li className="relative group">
+            <button onClick={gotoFaqPages} className="text-white hover:text-black focus:outline-none">
+              FAQ's
+            </button>
+            <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-amber-300 group-hover:w-full transition-all duration-300"></span>
+          </li>
 
         </ul>
       </nav>
@@ -314,9 +298,7 @@ const Header = () => {
       <div className='flex items-center space-x-4'>
         {isAuthenticated ? (
           <>
-            <button className='text-gray-700 hover:text-black'>
-              <BellIcon />
-            </button>
+
             {profile?.profilePhoto ? (
               <span
                 onMouseEnter={() => setIsOpen(true)}
@@ -358,29 +340,29 @@ const Header = () => {
       </div>
 
       {isOpen && (
-        <div className="absolute right-5 top-[70px] mt-2 w-36 bg-white border-2 border-gray-300  rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
-        <div className="absolute top-[-9px] right-4 w-4 h-4 bg-white border-t-2 border-l-2 border-gray-300 transform rotate-45"></div>
+        <div className="absolute right-5 top-[70px] mt-2 w-36 bg-[#2AA166] border-2 border-teal-500  rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
+          <div className="absolute top-[-9px] right-4 w-4 h-4 bg-[#2AA166] border-t-2 border-l-2 border-teal-500  transform rotate-45"></div>
 
-    
-        <div className="py-1">
-         <Link  to={routes.profile}>
-          <a
-             
-            className="flex items-center px-4 mt-2 py-2 text-sm text-gray-700 hover:bg-blue-500 hover:text-white cursor-pointer"
-          >
-            <User size={18} className='hover:text-white'/>
-            <span className="ml-3">Profile</span>
-          </a> </Link>
 
-          <a
-            onClick={logout}
-            className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-blue-500 hover:text-white cursor-pointer"
-          >
-            <LogOut size={16} className='hover:text-white'/>
-            <span className="ml-3">Logout</span>
-          </a>
+          <div className="py-1">
+            <Link to={routes.profile}>
+              <a
+
+                className="flex items-center px-4 mt-2 py-2 text-sm text-white hover:bg-[#166534] hover:rounded-md cursor-pointer m-0"
+              >
+                <User size={18} className='hover:text-white' />
+                <span className="ml-3">Profile</span>
+              </a> </Link>
+
+            <a
+              onClick={logout}
+              className="flex items-center px-4 py-2 text-sm text-white hover:bg-[#166534] hover:rounded-md cursor-pointer m-0"
+            >
+              <LogOut size={16} className='hover:text-white' />
+              <span className="ml-3">Logout</span>
+            </a>
+          </div>
         </div>
-      </div>
       )}
     </header>
   );

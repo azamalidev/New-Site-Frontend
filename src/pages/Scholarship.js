@@ -6,26 +6,26 @@ const ScholarshipSection = () => {
   return (
     <>
       <Header />
-      <section className="py-12 bg-gradient-to-r from-blue-700 to-[rgba(180,42,185,0.94)] text-white">
+      <section className="py-12 bg-white text-gray-800"> {/* Changed background to white and text color to dark gray */}
         <div className="container mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-4xl font-extrabold text-yellow-100 leading-tight mb-4">
+            <h2 className="text-4xl font-extrabold text-green-600 leading-tight mb-4"> {/* Adjusted green shade for main title */}
               Study Abroad Scholarship Opportunities - Roshan Mustaqbil Hunarmand Program (RMHP)
             </h2>
             <div className="hr-theme-slash-2 flex items-center justify-center mt-6">
-                <div className="hr-line flex-grow h-px bg-gray-300"></div>
-                <div className="hr-icon mx-4">
+                <div className="hr-line w-1/4 h-1 bg-green-500 mx-2"></div> {/* Kept green for hr-line */}
+                <div className="hr-icon text-lg font-medium text-gray-700 uppercase"> {/* Changed to gray for better contrast */}
                   <i className="fas fa-user-graduate fa-2x"></i>
                 </div>
-                <div className="hr-line flex-grow h-px bg-gray-300"></div>
+                <div className="hr-line w-1/4 h-1 bg-green-500 mx-2"></div> {/* Kept green for hr-line */}
               </div>
             </div>
           
 
-          <div className="space-y-12 text-lg text-gray-200">
+          <div className="space-y-12 text-lg text-gray-700"> {/* Changed text color to dark gray */}
             {/* Program Objectives */}
             <div className="space-y-4">
-              <h3 className="text-2xl font-semibold text-yellow-300 text-opacity-80">1. Program Objectives</h3>
+              <h3 className="text-2xl font-semibold text-green-700">1. Program Objectives</h3> {/* Adjusted green for section titles */}
               <ul className="list-disc pl-6 space-y-2">
                 <li>Provide financial support for deserving students to study at world-class universities.</li>
                 <li>Facilitate access to quality education and advanced research opportunities.</li>
@@ -37,7 +37,7 @@ const ScholarshipSection = () => {
 
             {/* Eligibility Criteria */}
             <div className="space-y-4">
-              <h3 className="text-2xl font-semibold text-yellow-300 text-opacity-80">2. Eligibility Criteria</h3>
+              <h3 className="text-2xl font-semibold text-green-700">2. Eligibility Criteria</h3> {/* Adjusted green for section titles */}
               <ul className="list-disc pl-6 space-y-2">
                 <li>Be an active participant or graduate of RMHP training programs.</li>
                 <li>Have an excellent academic record with at least 80% marks or equivalent GPA.</li>
@@ -50,7 +50,7 @@ const ScholarshipSection = () => {
 
             {/* Scholarship Coverage */}
             <div className="space-y-4">
-              <h3 className="text-2xl font-semibold text-yellow-300 text-opacity-80">3. Scholarship Coverage</h3>
+              <h3 className="text-2xl font-semibold text-green-700">3. Scholarship Coverage</h3> {/* Adjusted green for section titles */}
               <ul className="list-disc pl-6 space-y-2">
                 <li>Tuition Fees: Full or partial coverage of academic fees.</li>
                 <li>Living Expenses: Monthly stipend to cover accommodation, food, and other necessities.</li>
@@ -62,7 +62,7 @@ const ScholarshipSection = () => {
 
             {/* Supported Fields of Study */}
             <div className="space-y-4">
-              <h3 className="text-2xl font-semibold text-yellow-300 text-opacity-80">4. Supported Fields of Study</h3>
+              <h3 className="text-2xl font-semibold text-green-700">4. Supported Fields of Study</h3> {/* Adjusted green for section titles */}
               <ul className="list-disc pl-6 space-y-2">
                 <li>Engineering and Technology</li>
                 <li>Medicine and Health Sciences</li>
@@ -76,7 +76,7 @@ const ScholarshipSection = () => {
 
             {/* Application Process */}
             <div className="space-y-4">
-              <h3 className="text-2xl font-semibold text-yellow-300 text-opacity-80">5. Application Process</h3>
+              <h3 className="text-2xl font-semibold text-green-700">5. Application Process</h3> {/* Adjusted green for section titles */}
               <ul className="list-decimal pl-6 space-y-2">
                 <li>Submit an Application: Fill out the RMHP Study Abroad Scholarship Application Form available online or at RMHP offices.</li>
                 <li>Attach Required Documents: Include academic transcripts, personal statement, proof of English proficiency, etc.</li>
@@ -87,7 +87,7 @@ const ScholarshipSection = () => {
 
             {/* Obligations of Scholarship Recipients */}
             <div className="space-y-4">
-              <h3 className="text-2xl font-semibold text-yellow-300 text-opacity-80">6. Obligations of Scholarship Recipients</h3>
+              <h3 className="text-2xl font-semibold text-green-700">6. Obligations of Scholarship Recipients</h3> {/* Adjusted green for section titles */}
               <ul className="list-disc pl-6 space-y-2">
                 <li>Maintain excellent academic performance during their studies.</li>
                 <li>Act as ambassadors of RMHP and their country.</li>
@@ -98,7 +98,7 @@ const ScholarshipSection = () => {
 
             {/* Benefits */}
             <div className="space-y-4">
-              <h3 className="text-2xl font-semibold text-yellow-300 text-opacity-80">7. Benefits of the Scholarship</h3>
+              <h3 className="text-2xl font-semibold text-green-700">7. Benefits of the Scholarship</h3> {/* Adjusted green for section titles */}
               <ul className="list-disc pl-6 space-y-2">
                 <li>Global Exposure: Experience diverse cultures, ideas, and learning environments.</li>
                 <li>Career Advancement: Enhance career prospects with an internationally recognized degree.</li>
@@ -110,7 +110,7 @@ const ScholarshipSection = () => {
 
             {/* Contact Information */}
             <div className="space-y-4">
-              <h3 className="text-2xl font-semibold text-yellow-300 text-opacity-80">8. Contact Information</h3>
+              <h3 className="text-2xl font-semibold text-green-700">8. Contact Information</h3> {/* Adjusted green for section titles */}
               <ul className="list-none text-lg mt-2">
                 <li><strong>Email:</strong> scholarships@rmhp.org</li>
                 <li><strong>Phone:</strong> +92-XXX-XXXXXXX</li>
@@ -118,9 +118,9 @@ const ScholarshipSection = () => {
               </ul>
             </div>
             <div className="hr-theme-slash-2 flex items-center text-center justify-center mb-6">
-              <div className="hr-line w-1/4 h-1 bg-yellow-300 mx-2"></div>
-              <div className="hr-icon text-lg font-medium text-yellow-100 uppercase">Empowering Talented Students</div>
-              <div className="hr-line w-1/4 h-1 bg-yellow-300 mx-2"></div>
+              <div className="hr-line w-1/4 h-1 bg-green-500 mx-2"></div> {/* Kept green for hr-line */}
+              <div className="hr-icon text-lg font-medium text-gray-700 uppercase">Empowering Talented Students</div> {/* Changed to gray for better contrast */}
+              <div className="hr-line w-1/4 h-1 bg-green-500 mx-2"></div> {/* Kept green for hr-line */}
             </div>
           </div>
           

@@ -26,7 +26,13 @@ const Course = () => {
   };
 
   return (
-    <div className=' p-6 bg-gradient-to-r from-teal-500 to-red-500'>
+    <div className="p-6 bg-gradient-to-r from-blue-600 via-teal-700 to-teal-600">
+
+
+
+
+
+
       <div className='text-center mb-6'>
         <h1 className='text-3xl font-extrabold text-white'>
           PFTP has collaborated with NIAIS for onsite Trainings
@@ -36,21 +42,22 @@ const Course = () => {
       {/* Scrollable Buttons Section */}
       <div className='overflow-x-auto  mb-6'>
         <div className='flex space-x-4  whitespace-nowrap'>
-          <button
-            className={`px-6 py-3 rounded-lg transition-all duration-300 ${
-              selectedCategory === 'All'
-                ? 'bg-yellow-400 text-white shadow-lg'
-                : 'bg-white text-black border-2 border-yellow-400 hover:bg-yellow-100'
-            }`}
-            onClick={() => setSelectedCategory('All')}
-          >
-            All
-          </button>
+        <button
+  className={`px-6 py-3 rounded-lg transition-all duration-300 ${
+    selectedCategory === 'All'
+      ? 'bg-green-800 text-white shadow-lg'
+      : 'bg-white text-green-800  '
+  }`}
+  onClick={() => setSelectedCategory('All')}
+>
+  All
+</button>
+
           <button
             className={`px-6 py-3 rounded-lg transition-all duration-300 ${
               selectedCategory === 'Website Development'
-                ? 'bg-yellow-400 text-white shadow-lg'
-                : 'bg-white text-black border-2 border-yellow-400 hover:bg-yellow-100'
+                ? 'bg-green-800 text-white shadow-lg'
+                : 'bg-white text-green-800 '
             }`}
             onClick={() => setSelectedCategory('Website Development')}
           >
@@ -59,8 +66,8 @@ const Course = () => {
           <button
             className={`px-6 py-3 rounded-lg transition-all duration-300 ${
               selectedCategory === 'Emerging Technologies'
-                ? 'bg-yellow-400 text-white shadow-lg'
-                : 'bg-white text-black border-2 border-yellow-400 hover:bg-yellow-100'
+                ? 'bg-green-800 text-white shadow-lg'
+                : 'bg-white text-green-800'
             }`}
             onClick={() => setSelectedCategory('Emerging Technologies')}
           >
@@ -69,8 +76,8 @@ const Course = () => {
           <button
             className={`px-6 py-3 rounded-lg transition-all duration-300 ${
               selectedCategory === 'Video Editing and Designing'
-                ? 'bg-yellow-400 text-white shadow-lg'
-                : 'bg-white text-black border-2 border-yellow-400 hover:bg-yellow-100'
+                ? 'bg-green-800 text-white shadow-lg'
+                : 'bg-white text-green-800'
             }`}
             onClick={() => setSelectedCategory('Video Editing and Designing')}
           >
@@ -145,12 +152,13 @@ const Course = () => {
           ))}
       </div>
       <div className='text-center mt-6'>
-        <button
-          className='px-6 py-3 bg-yellow-500 text-white rounded-lg hover:bg-yellow-400 transition-all duration-300'
-          onClick={loadMoreCourses}
-        >
-          Load More
-        </button>
+      <button
+  className='px-6 py-3 bg-green-800 text-white rounded-lg hover:bg-green-700 transition-all duration-300'
+  onClick={loadMoreCourses}
+>
+  Load More
+</button>
+
       </div>
     </div>
   );
