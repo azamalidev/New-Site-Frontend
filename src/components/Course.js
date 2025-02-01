@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { getCourse } from '../redux/action/request';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { routes } from "../contant";
+import { routes } from '../contant';
 
 const Course = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -26,13 +26,7 @@ const Course = () => {
   };
 
   return (
-    <div className="p-6 bg-gradient-to-r from-blue-600 via-teal-700 to-teal-600">
-
-
-
-
-
-
+    <div className='p-6 bg-gradient-to-r from-blue-600 via-teal-700 to-teal-600'>
       <div className='text-center mb-6'>
         <h1 className='text-3xl font-extrabold text-white'>
           PFTP has collaborated with NIAIS for onsite Trainings
@@ -42,16 +36,16 @@ const Course = () => {
       {/* Scrollable Buttons Section */}
       <div className='overflow-x-auto  mb-6'>
         <div className='flex space-x-4  whitespace-nowrap'>
-        <button
-  className={`px-6 py-3 rounded-lg transition-all duration-300 ${
-    selectedCategory === 'All'
-      ? 'bg-green-800 text-white shadow-lg'
-      : 'bg-white text-green-800  '
-  }`}
-  onClick={() => setSelectedCategory('All')}
->
-  All
-</button>
+          <button
+            className={`px-6 py-3 rounded-lg transition-all duration-300 ${
+              selectedCategory === 'All'
+                ? 'bg-green-800 text-white shadow-lg'
+                : 'bg-white text-green-800  '
+            }`}
+            onClick={() => setSelectedCategory('All')}
+          >
+            All
+          </button>
 
           <button
             className={`px-6 py-3 rounded-lg transition-all duration-300 ${
@@ -93,7 +87,11 @@ const Course = () => {
             <div
               key={index}
               onClick={() => {
-                navigate(`${routes.courseDetail.replace(':id', course._id)}`);
+                if(localStorage.getItem('token')){
+                  navigate(`${routes.courseDetail.replace(':id', course._id)}`);
+                }else{
+                  navigate(routes.signin);
+                }
               }}
               className='p-6 bg-white rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer'
             >
@@ -152,13 +150,12 @@ const Course = () => {
           ))}
       </div>
       <div className='text-center mt-6'>
-      <button
-  className='px-6 py-3 bg-green-800 text-white rounded-lg hover:bg-green-700 transition-all duration-300'
-  onClick={loadMoreCourses}
->
-  Load More
-</button>
-
+        <button
+          className='px-6 py-3 bg-green-800 text-white rounded-lg hover:bg-green-700 transition-all duration-300'
+          onClick={loadMoreCourses}
+        >
+          Load More
+        </button>
       </div>
     </div>
   );

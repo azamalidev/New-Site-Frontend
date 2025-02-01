@@ -5,7 +5,6 @@ import { routes } from '../contant';
 import { login } from '../redux/action/auth';
 import { useDispatch } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
-
 const SignIn = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -178,8 +177,22 @@ const SignIn = () => {
               Sign Up
             </a>
           </p>
+
+          <p className='text-center text-sm text-gray-600 mt-4'>
+            Go back to {' '}
+            <a
+              href={routes.main}
+              className='text-green-800 hover:underline'
+            >
+              General page
+            </a>
+          </p>
         </form>
       </div>
+
+     
+      
+     
     </div>
   );
 };

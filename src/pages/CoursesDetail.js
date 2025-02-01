@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Footer from '../components/footur';
 import Header from '../components/Header';
-import { useDispatch, useSelector } from 'react-redux';
 import { getCourseById, enrollCourseNow } from '../redux/action/request';
 import { useParams } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCourse } from '../redux/action/request';
 import {
   Star,
   Clock,
@@ -14,6 +15,7 @@ import {
   BadgeIcon,
 } from 'lucide-react';
 export default function CourseDetail() {
+  const { course } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const { id } = useParams();
   const { courseDetail } = useSelector((state) => state.auth);
@@ -21,17 +23,26 @@ export default function CourseDetail() {
     dispatch(getCourseById(id));
   }, [1000]);
 
-  const enrollCourse=(courseId)=>{
-    const data ={
-      courseId : courseId,
+  const enrollCourse = (courseId) => {
+    const data = {
+      courseId: courseId,
       userId: localStorage.getItem('userId'),
-      status:'Pending'
-    }
+      status: 'Pending',
+    };
     dispatch(enrollCourseNow(data));
-  }
+  };
+
+  useEffect(() => {
+    dispatch(getCourse());
+  }, [1000]);
+  const [randomCourses, setRandomCourses] = useState([]);
+
+  useEffect(() => {
+    setRandomCourses(course.sort(() => Math.random() - 0.5).slice(0, 3));
+  }, [course]);
   return (
     <div>
-      <ToastContainer/>
+      <ToastContainer />
       <Header />
       <section className='bg-gray-100 py-12'>
         <div className='container mx-auto px-4'>
@@ -43,7 +54,7 @@ export default function CourseDetail() {
                   <div className='flex flex-wrap items-center gap-6 text-sm'>
                     <div className='flex items-center'>
                       <img
-                        src='/assets/images/logo1.png'
+                        src={courseDetail?.courseImage}
                         alt='Instructor'
                         className='w-12 h-12 rounded-full mr-3'
                       />
@@ -74,13 +85,13 @@ export default function CourseDetail() {
                     </div>
                     <div>
                       <h6 className='font-semibold'>Registration Fee</h6>
-                      <p className='text-gray-600'>2900</p>
+                      <p className='text-gray-600'>2900 Rs</p>
                     </div>
                   </div>
                 </div>
                 <div className='mb-6'>
                   <img
-                    src='https://aws.pftpedu.org/storage/courses/detail/webimg6.jpg'
+                    src={courseDetail?.courseImage}
                     alt='Course Banner'
                     className='w-full rounded-lg'
                   />
@@ -166,9 +177,9 @@ export default function CourseDetail() {
             <div className='w-full lg:w-1/4 px-4'>
               <div className='bg-white rounded-lg shadow-md p-6 mb-6'>
                 <h5 className='text-xl font-bold mb-4'>Course Details</h5>
-                <ul className='space-y-2'>
+                <ul className=''>
                   <li className='flex items-center'>
-                    <Clock className='w-5 h-5 mr-2' />
+                    <Clock className=' h-5 mr-2' />
                     <span className='font-semibold'>Duration:</span>
                     <span className='ml-2'>3-Months</span>
                   </li>
@@ -193,27 +204,25 @@ export default function CourseDetail() {
                     <span className='ml-2'>Yes</span>
                   </li>
                 </ul>
-                
-                  <button onClick={()=> enrollCourse(courseDetail._id)} className='w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg mt-6 hover:bg-blue-700 transition duration-300'>
-                    Enroll Course
-                  </button>
-                
+
+                <button
+                  onClick={() => enrollCourse(courseDetail._id)}
+                  className='w-full bg-[#166534] text-white font-semibold py-2 px-4 rounded-lg mt-6 transition duration-300'
+                >
+                  Enroll Course
+                </button>
               </div>
               <div className='bg-white rounded-lg shadow-md p-6 mb-6'>
                 <h5 className='text-xl font-bold mb-4'>Related Course</h5>
                 <div className='space-y-4'>
-                  <RelatedCourse
-                    title='Front-end development'
-                    image='https://aws.pftpedu.org/storage/courses/detail/webimg2.jpg'
-                  />
-                  <RelatedCourse
-                    title='WordPress'
-                    image='https://aws.pftpedu.org/storage/courses/detail/webimg3.jpg'
-                  />
-                  <RelatedCourse
-                    title='Shopify'
-                    image='https://aws.pftpedu.org/storage/courses/detail/Xh7LHNer4P1bP7Rszel63Zenm1jzM7Hehg47AxH9.jpg'
-                  />
+                  {randomCourses.map((obj, index) => {
+                    return (
+                      <RelatedCourse
+                        title={obj?.title}
+                        image={obj?.courseImage}
+                      />
+                    );
+                  })}
                 </div>
               </div>
               <div className='bg-white rounded-lg shadow-md p-6'>

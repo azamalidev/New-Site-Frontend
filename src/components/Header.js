@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import ProfileIcon from '../assets/icons/profile';
-import BellIcon from '../assets/icons/bell';
 import { routes } from '../contant';
 import { LogOut, User } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
-// import Logo from '../assets/image/Logo.png';
 import { getProfile } from '../redux/action/auth';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -323,18 +321,18 @@ const Header = () => {
           </>
         ) : (
           <>
-            <Link
+            {/* <Link
               to={routes.signup}
               className='text-sm text-blue-600 hover:underline'
             >
-              Signup
-            </Link>
-            <Link
+              Signup kkkk
+            </Link> */}
+            {/* <Link
               to={routes.signin}
               className='text-sm text-blue-600 hover:underline'
             >
               Login
-            </Link>
+            </Link> */}
           </>
         )}
       </div>

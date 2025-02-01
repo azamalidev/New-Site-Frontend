@@ -48,29 +48,18 @@ export default function Footer() {
                 <Link to="#" className="block text-[#f5f4f3] hover:text-[#FF8C00] no-underline">How to Apply</Link>
                 <Link to="#" className="block text-[#f5f4f3] hover:text-[#3a76f8] no-underline">How to Pay</Link>
                 <Link to="#" className="block text-[#f5f4f3] hover:text-[#FF8C00] no-underline">Terms & Condition</Link>
-                <Link to="#" className="block text-[#f5f4f3] hover:text-[#FF8C00] no-underline">Privacy Policy</Link>
                 <Link to="#" className="block text-[#f5f4f3] hover:text-[#FF8C00] no-underline">SOPS</Link>
               </div>
               <div className="space-y-4 text-left">
                 <Link to="#" className="block text-[#f5f4f3] hover:text-[#FF8C00] no-underline">Scholarships</Link>
                 <Link to="#" className="block text-[#f5f4f3] hover:text-[#FF8C00] no-underline">Internships</Link>
-                <Link to="#" className="block text-[#f5f4f3] hover:text-[#FF8C00] no-underline">Payment Partner</Link>
                 <Link to="#" className="block text-[#f5f4f3] hover:text-[#FF8C00] no-underline">Contact Us</Link>
                 <Link to="#" className="block text-[#f5f4f3] hover:text-[#FF8C00] no-underline">FAQs</Link>
               </div>
             </div>
           </div>
 
-          {/* Logo */}
-          <div className="flex justify-center md:justify-end">
-            <img
-              src="/placeholder.svg" // Ensure this image is in the public folder
-              alt="Institution Logo"
-              width={300}
-              height={300}
-              className="object-contain"
-            />
-          </div>
+         
         </div>
 
         {/* Bottom Bar */}
