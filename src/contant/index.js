@@ -1,3 +1,4 @@
+import CertificatePage from "../pages/CertificatePage";
 import Profile from "../pages/Profile";
 export const routes = {
   main: "/",
@@ -25,5 +26,6 @@ export const routes = {
   PrivacyPolicy: "/PrivacyPolicy",
   LaptopScheme: "/LaptopScheme",
   SolarScheme: "/SolarScheme",
+  CertificatePage: "/CertificatePage",
 };
 

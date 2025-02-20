@@ -47,6 +47,7 @@ import {
   CircleLoader,
   ClimbingBoxLoader,
 } from 'react-spinners';
+import CertificatePage from './pages/CertificatePage';
 
 // Public Route Component
 const PublicRoute = ({ isAuthenticated, children }) => {
@@ -155,6 +156,10 @@ function App() {
         <Route
           path={routes.SolarScheme}
           element={<SolarScheme />}
+        />
+        <Route
+          path={routes.CertificatePage}
+          element={<CertificatePage />}
         />
 
         <Route
