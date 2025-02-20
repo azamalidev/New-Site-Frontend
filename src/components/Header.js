@@ -50,6 +50,10 @@ const Header = () => {
     navigate(routes.Faqs);
   };
 
+  const gotoCertificatePage = () => {
+    navigate(routes.CertificatePage);
+  };
+
   const gotoOppertunity = (title) => {
     if (title === 'Scholarship') {
       navigate(routes.scholarship);
@@ -175,6 +179,12 @@ const Header = () => {
               className="block w-full py-2 text-sm text-white hover:bg-[#2AA166] hover:rounded-md text-left px-4"
             >
               Scholarship
+            </button>
+            <button
+              onClick={() => gotoCertificatePage('CertificatePage')}
+              className="block w-full py-2 text-sm text-white hover:bg-[#2AA166] hover:rounded-md text-left px-4"
+            >
+              Certificates
             </button>
           </div>
         </div>
@@ -407,6 +417,12 @@ const Header = () => {
         >
           Scholarship
         </button>
+        <button
+              onClick={() => gotoCertificatePage('CertificatePage')}
+              className="block w-full py-2 px-2 text-sm text-gray-700 hover:bg-gray-100 hover:rounded-md text-left"
+            >
+              Certificates
+            </button>
       </div>
     </div>
 

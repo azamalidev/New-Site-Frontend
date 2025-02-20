@@ -1,10 +1,44 @@
-import React from 'react';
-import { motion } from 'framer-motion'; // Import Framer Motion
-import Footur from '../components/footur';
-import Header from '../components/Header';
-import coverImage from '../assets/image/cover.png';
-import videodm from '../assets/image/videodm.mp4';
-import netflix from '../../src/assets/image/netflix.jpg';
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion"; // Import Framer Motion
+import Footur from "../components/footur";
+import Header from "../components/Header";
+import coverImage from "../assets/image/cover.png";
+import videodm from "../assets/image/videodm.mp4";
+import netflix from "../../src/assets/image/netflix.jpg";
+
+
+const Counter = ({ target, title }) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const duration = 4000; // 4000 milli seconds
+    const increment = target / (duration / 16); 
+
+    let start = 0;
+    const timer = setInterval(() => {
+      start += increment;
+      if (start >= target) {
+        setCount(target);
+        clearInterval(timer);
+      } else {
+        setCount(Math.ceil(start));
+      }
+    }, 16); 
+
+    return () => clearInterval(timer); 
+  }, [target]);
+
+  return (
+    <motion.div
+      className="bg-gray-50 shadow-md rounded-lg p-4 hover:scale-105 transition-transform"
+    >
+      <h2 className="text-2xl sm:text-3xl font-bold text-blue-600">
+        {count.toLocaleString()}+
+      </h2>
+      <p className="text-gray-600 text-sm sm:text-base">{title}</p>
+    </motion.div>
+  );
+};
 
 const AboutUs = () => {
   return (
@@ -62,7 +96,7 @@ const AboutUs = () => {
                 key={idx}
                 className="flex items-center mb-4"
                 whileHover={{ scale: 1.05 }}
-                transition={{ type: 'spring', stiffness: 300 }}
+                transition={{ type: "spring", stiffness: 300 }}
               >
                 <div className="flex items-center justify-center bg-blue-600 text-white w-8 h-8 mr-3 rounded-full">
                   <i className="fas fa-check text-sm"></i>
@@ -110,19 +144,13 @@ const AboutUs = () => {
         transition={{ duration: 1 }}
       >
         {[
-          { title: "Seats Available", value: "118,276+" },
-          { title: "Enrolled Students", value: "17,000+" },
-          { title: "Available Courses", value: "20+" },
-          { title: "No. of Alumni", value: "9,000+" },
-          { title: "Industrial Trainers", value: "26+" },
+          { title: "Seats Available", value: 118276 },
+          { title: "Enrolled Students", value: 17000 },
+          { title: "Available Courses", value: 20 },
+          { title: "No. of Alumni", value: 9000 },
+          { title: "Industrial Trainers", value: 26 },
         ].map((counter, index) => (
-          <motion.div
-            key={index}
-            className="bg-gray-50 shadow-md rounded-lg p-4 hover:scale-105 transition-transform"
-          >
-            <h2 className="text-2xl sm:text-3xl font-bold text-blue-600">{counter.value}</h2>
-            <p className="text-gray-600 text-sm sm:text-base">{counter.title}</p>
-          </motion.div>
+          <Counter key={index} target={counter.value} title={counter.title} />
         ))}
       </motion.div>
 
