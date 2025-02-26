@@ -235,6 +235,65 @@ export const getMyAddToCartCourse = (status) => async (dispatch) => {
   }
 };
 
+export const getMyPaidCourse = (status) => async (dispatch) => {
+  try {
+    const token = localStorage.getItem('token');
+    const userId = localStorage.getItem('userId');
+    let config = {
+      method: 'get',
+      url: `${API_BASE_URL}/add-to-card/get-paid?userId=${userId}`,
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+    };
+
+    const response = await axios.request(config);
+    console.log(response.data, 'response.data');
+    if (response.data) {
+      dispatch({
+        type: "GET_MY_PAID_COURSE",
+        payload: response.data?.data,
+      });
+    }
+
+    return response.data;
+  } catch (error) {
+    toast.error(error.response?.data?.message || error.message);
+    return error;
+  }
+};
+
+export const uploadChallan = (id, data) => async (dispatch) => {
+  try {
+    console.log(data, 'data')
+    const token = localStorage.getItem('token');
+    let config = {
+      method: 'patch',
+      url: `${REACT_APP_API_BASE_URL}/add-to-card/upload-challan/?id=${id}`,
+      headers: {
+        Authorization: `Bearer ${token}`, // Pass the token as in the cURL
+        'Content-Type': 'application/json', // Include content type (optional for GET requests)
+      },
+      data: data,
+      maxBodyLength: Infinity, // Match the cURL option
+    };
+
+    const response = await axios.request(config);
+
+    if (response.data) {
+      toast.success(
+        response.data?.data?.message || 'Challan Uploaded Successfully'
+      );
+    }
+
+    return response.data;
+  } catch (error) {
+    toast.error(error.response?.data?.message || error.message);
+    return error;
+  }
+};
+
 export const removeMyAllCourse = (data) => async (dispatch) => {
   try {
     const token = localStorage.getItem('token');
@@ -281,6 +340,33 @@ export const enrollCourseNow = (data) => async (dispatch) => {
     console.log(response, 'response');
     if (response.data) {
       toast.success(response?.data?.message);
+    }
+
+    return response.data;
+  } catch (error) {
+    toast.error(error.response?.data?.message || error.message);
+    return error;
+  }
+};
+
+export const getAllUserPaidCourse = (id) => async (dispatch) => {
+  try {
+    const token = localStorage.getItem('token');
+    let config = {
+      method: 'get',
+      url: `${API_BASE_URL}/add-to-card/get-paid-all?id=${id}`,
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+    };
+
+    const response = await axios.request(config);
+    if (response.data) {
+      dispatch({
+        type: "GET_MY_PAID_COURSE",
+        payload: response.data?.data,
+      });
     }
 
     return response.data;
