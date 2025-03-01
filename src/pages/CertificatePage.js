@@ -4,42 +4,28 @@ import Footer from "../components/footur";
 
 const CertificatePage = () => {
   const [rollNumber, setRollNumber] = useState("");
+  const [name, setName] = useState("");
   const [certificateUrl, setCertificateUrl] = useState(null);
   const [error, setError] = useState(null);
 
-  // Function to fetch certificate URL from the JSON file
-  const checkCertificate = async (rollNumber) => {
-    try {
-      const response = await fetch("/certificates.json");
-      if (!response.ok) {
-        throw new Error("Failed to fetch certificate data.");
-      }
+  const certificates = [
+    { name: "Ali", roll: "12345", link: "/certificates/certificate1.pdf" },
+  ];
 
-      const data = await response.json();
-
-      // Use a for loop to search for the certificate
-      for (let i = 0; i < data.length; i++) {
-        if (data[i].name === rollNumber) {
-          return data[i].link; // Return the certificate link if found
-        }
-      }
-
-      throw new Error("No certificate found for this roll number.");
-    } catch (err) {
-      throw err;
-    }
-  };
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setError(null);
     setCertificateUrl(null);
+    setName("");
 
-    try {
-      const url = await checkCertificate(rollNumber);
-      setCertificateUrl(url);
-    } catch (err) {
-      setError(err.message);
+    // Find the certificate in the local array
+    const certificate = certificates.find((cert) => cert.roll === rollNumber);
+
+    if (certificate) {
+      setCertificateUrl(certificate.link);
+      setName(certificate.name);
+    } else {
+      setError("No certificate found for this roll number.");
     }
   };
 
@@ -90,28 +76,26 @@ const CertificatePage = () => {
             </div>
           </form>
 
-          {/* Display Certificate in Browser */}
-          {certificateUrl && (
-  <div className="mt-6 text-center">
-    {/* Embed PDF in iframe */}
-    <iframe
-      src={`${process.env.PUBLIC_URL}${certificateUrl}`}
-      type="application/pdf"
-      className="w-full h-96 border border-gray-300 rounded-lg"
-      title="Certificate"
-    />
+          {/* User Information Card */}
+          {name && (
+            <div className="mt-6 p-4 bg-white shadow-lg rounded-lg border border-gray-200 text-center">
+              <h3 className="text-lg font-semibold text-gray-900">
+                Certificate Holder:
+              </h3>
+              <p className="text-gray-600 text-lg mt-1">{name}</p>
 
-    {/* Download Button */}
-    <a
-      href={`${process.env.PUBLIC_URL}${certificateUrl}`}
-      download="certificate.pdf"
-      className="mt-4 inline-block px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700"
-    >
-      Download Certificate
-    </a>
-  </div>
-)}
-
+              
+              {certificateUrl && (
+                <a
+                  href={certificateUrl}
+                  download="certificate.pdf"
+                  className="mt-4 inline-block no-underline bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition duration-200"
+                >
+                  Download Certificate
+                </a>
+              )}
+            </div>
+          )}
 
           {/* Error Message */}
           {error && (
